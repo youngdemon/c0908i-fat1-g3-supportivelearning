@@ -1,7 +1,7 @@
 create database SupportiveLearning
 go
---use master
---drop database SupportiveLearning
+use master
+drop database SupportiveLearning
 use SupportiveLearning
 go
 create table Roles
@@ -129,10 +129,12 @@ create table News
 	NewsDate datetime
 )
 go
+--drop table FAQ
 create table FAQ
 (
-	FAQId nvarchar(100),
+	FAQId nvarchar(100) primary key,
 	Question nvarchar(max),
 	Answer nvarchar(max),
 	FAQDate datetime
 )
+select * from subject
