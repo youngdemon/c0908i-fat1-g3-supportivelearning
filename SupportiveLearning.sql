@@ -21,7 +21,7 @@ create table Account
 	FullName nvarchar(100),
 	Birthday datetime,
 	Gender bit,
-	Phone nvarchar,
+	Phone nvarchar(100),
 	Email nvarchar(100),
 	Address nvarchar(100),
 	Status bit,
