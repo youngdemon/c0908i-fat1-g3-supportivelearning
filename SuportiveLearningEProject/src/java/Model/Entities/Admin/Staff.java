@@ -11,4 +11,27 @@ package Model.Entities.Admin;
  */
 public class Staff {
 
+    public Staff()
+    {
+
+    }
+
+    private String StaffId;
+    private String AccountId;
+
+    public String getAccountId() {
+        return AccountId;
+    }
+
+    public void setAccountId(String AccountId) {
+        this.AccountId = AccountId;
+    }
+
+    public String getStaffId() {
+        return StaffId;
+    }
+
+    public void setStaffId(String StaffId) {
+        this.StaffId = StaffId;
+    }
 }
