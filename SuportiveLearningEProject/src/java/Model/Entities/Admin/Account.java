@@ -26,7 +26,7 @@ public class Account {
     private String FullName;
     private Date Birthday;
     private int Gender;
-    private int Phone;
+    private String Phone;
     private String Email;
     private String Address;
     private int Status;
@@ -113,11 +113,11 @@ public class Account {
         this.PassWord = PassWord;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return Phone;
     }
 
-    public void setPhone(int Phone) {
+    public void setPhone(String Phone) {
         this.Phone = Phone;
     }
 
