@@ -18,40 +18,23 @@ public class Subject {
 
     }
 
-    private String AnswerId;
-    private String FeedBackId;
-    private String Answer;
-    private Date AnswerDate;
+    private String SubjectId;
+    private String SubjectName;
 
-    public String getAnswer() {
-        return Answer;
+    public String getSubjectId() {
+        return SubjectId;
     }
 
-    public void setAnswer(String Answer) {
-        this.Answer = Answer;
+    public void setSubjectId(String SubjectId) {
+        this.SubjectId = SubjectId;
     }
 
-    public Date getAnswerDate() {
-        return AnswerDate;
+    public String getSubjectName() {
+        return SubjectName;
     }
 
-    public void setAnswerDate(Date AnswerDate) {
-        this.AnswerDate = AnswerDate;
+    public void setSubjectName(String SubjectName) {
+        this.SubjectName = SubjectName;
     }
 
-    public String getAnswerId() {
-        return AnswerId;
-    }
-
-    public void setAnswerId(String AnswerId) {
-        this.AnswerId = AnswerId;
-    }
-
-    public String getFeedBackId() {
-        return FeedBackId;
-    }
-
-    public void setFeedBackId(String FeedBackId) {
-        this.FeedBackId = FeedBackId;
-    }
 }
