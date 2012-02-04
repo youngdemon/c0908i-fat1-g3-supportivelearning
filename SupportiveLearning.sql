@@ -1,7 +1,7 @@
 create database SupportiveLearning
 go
-use master
-drop database SupportiveLearning
+--use master
+--drop database SupportiveLearning
 use SupportiveLearning
 go
 create table Roles
@@ -21,7 +21,7 @@ create table Account
 	FullName nvarchar(100),
 	Birthday datetime,
 	Gender bit,
-	Phone int,
+	Phone nvarchar,
 	Email nvarchar(100),
 	Address nvarchar(100),
 	Status bit,
@@ -116,7 +116,7 @@ create table MarkAssignment
 	StudentId nvarchar(100) foreign key references Student(StudentId),
 	Assignment nvarchar(100) foreign key references Assignment(AssignmentId),
 	FileUpload nvarchar(max),
-	MarkAssignment int,
+	MarkAssignment float,
 	DateUpload datetime
 )
 go
@@ -136,5 +136,21 @@ create table FAQ
 	Question nvarchar(max),
 	Answer nvarchar(max),
 	FAQDate datetime
+)
+
+create table ChangeLeaning
+(
+	ChangeLeaningId nvarchar(200) primary key,
+	StudentId nvarchar(100) foreign key references Student(StudentId),
+	BatchId nvarchar(100) foreign key references Batch(BatchId),
+	Reason nvarchar(max),
+	DataChange datetime
+)
+
+create table StaffAndBatch
+(
+	StaffAndBatchId nvarchar(100) primary key,
+	StaffId nvarchar(100) foreign key references Staff(StaffId),
+	BatchId nvarchar(100) foreign key references Batch(BatchId),
 )
 select * from subject
