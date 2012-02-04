@@ -13,6 +13,10 @@ import java.util.Date;
  */
 public class MarkAssignment
 {
+    public MarkAssignment()
+    {
+        
+    }
     private String MarAssignmentId;
     private String StudentId;
     private String Assignment;
