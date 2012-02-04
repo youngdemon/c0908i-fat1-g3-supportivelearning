@@ -37,13 +37,31 @@ public class ManagementSubject
         return false;
         }
     }
-    public boolean updateSubject(Subject s)
+    public boolean updateSubject(Subject s) throws SQLException
     {
-        return true;
+        PreparedStatement ps = conn.prepareStatement("update Subject set SubjectName = ? where SubjectId = ?");
+        ps.setString(1, s.getSubjectName());
+        ps.setString(2, s.getSubjectId());
+        if(ps.executeUpdate()>0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
-    public boolean deleteSubject(Subject s)
+    public boolean deleteSubject(Subject s) throws SQLException
     {
-        return true;
+        PreparedStatement ps = conn.prepareStatement("delete from Subject where SubjectId = ?");
+        ps.setString(1, s.getSubjectId());
+        if(ps.executeUpdate()>0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
-
 }
