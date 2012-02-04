@@ -44,7 +44,7 @@ public class ManagementStudent {
         ps.setString(1, s.getAccountId());
         ps.setString(2, s.getRollNumber());
         ps.setString(3, s.getBatchId());
-        ps.setString(4, s.getAccountId());
+        ps.setString(4, s.getStudentId());
         if(ps.executeUpdate()>0)
         {
             return true;
