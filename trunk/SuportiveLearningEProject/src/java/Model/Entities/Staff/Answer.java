@@ -13,6 +13,10 @@ import java.util.Date;
  */
 public class Answer
 {
+    public Answer()
+    {
+
+    }
 
         private String AnswerId;
         private String FeedBackId;

@@ -13,6 +13,10 @@ import java.util.Date;
  */
 public class Assignment
 {
+    public Assignment()
+    {
+        
+    }
     private String AssignmentId;
     private String AssignmentName;
     private String AssignmentFile;
