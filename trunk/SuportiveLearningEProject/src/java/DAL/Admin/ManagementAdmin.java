@@ -40,6 +40,7 @@ public class ManagementAdmin {
     public boolean updateAdmin(Admin a) throws SQLException
     {
         PreparedStatement ps = conn.prepareStatement("update Admin set AccountId = ? where AdminId = ?");
+        ps.setString(1, a.getAccountId());
         ps.setString(1, a.getAdminId());
 
         if(ps.executeUpdate()>0)
