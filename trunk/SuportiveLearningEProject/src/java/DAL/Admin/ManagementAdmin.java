@@ -6,7 +6,7 @@
 package DAL.Admin;
 
 import Model.DBConnection;
-import Model.Entities.Admin.Staff;
+import Model.Entities.Admin.Admin;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -15,18 +15,17 @@ import java.sql.SQLException;
  *
  * @author Ncuong
  */
-public class ManagementStaff {
+public class ManagementAdmin {
     Connection conn = null;
-    public ManagementStaff()
+    public ManagementAdmin()
     {
         conn = DBConnection.getConnect();
     }
-
-    public boolean addNewStaff(Staff s) throws SQLException
+    public boolean addNewAdmin(Admin a) throws SQLException
     {
-        PreparedStatement ps = conn.prepareStatement("insert into Staff values(?,?)");
-        ps.setString(1, s.getStaffId());
-        ps.setString(1, s.getAccountId());
+        PreparedStatement ps = conn.prepareStatement("?,?");
+        ps.setString(1, a.getAdminId());
+        ps.setString(1, a.getAccountId());
 
         if(ps.executeUpdate()>0)
         {
@@ -38,11 +37,10 @@ public class ManagementStaff {
         }
     }
 
-    public boolean updateStaff(Staff s) throws SQLException
+    public boolean updateAdmin(Admin a) throws SQLException
     {
-        PreparedStatement ps = conn.prepareStatement("update Staff set AccountId = ? where StaffId = ?");
-        ps.setString(1, s.getStaffId());
-        ps.setString(1, s.getAccountId());
+        PreparedStatement ps = conn.prepareStatement("update Admin set AccountId = ? where AdminId = ?");
+        ps.setString(1, a.getAdminId());
 
         if(ps.executeUpdate()>0)
         {
@@ -53,10 +51,11 @@ public class ManagementStaff {
             return false;
         }
     }
-    public boolean deleteStaff(Staff s) throws SQLException
+
+    public boolean deleteStaff(Admin a) throws SQLException
     {
-        PreparedStatement ps = conn.prepareStatement("delete from Staff where StaffId=?");
-        ps.setString(1, s.getStaffId());
+        PreparedStatement ps = conn.prepareStatement("delete from Admin where AdminId=?");
+        ps.setString(1, a.getAdminId());
 
         if(ps.executeUpdate()>0)
         {
