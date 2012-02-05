@@ -140,4 +140,20 @@ create table FAQ
 	Answer nvarchar(max),
 	FAQDate datetime
 )
+
+create table ChangeLeaning
+(
+	ChangeLeaningId nvarchar(200) primary key,
+	StudentId nvarchar(100) foreign key references Student(StudentId),
+	BatchId nvarchar(100) foreign key references Batch(BatchId),
+	Reason nvarchar(max),
+	DataChange datetime
+)
+
+create table StaffAndBatch
+(
+	StaffAndBatchId nvarchar(100) primary key,
+	StaffId nvarchar(100) foreign key references Staff(StaffId),
+	BatchId nvarchar(100) foreign key references Batch(BatchId),
+)
 select * from subject
