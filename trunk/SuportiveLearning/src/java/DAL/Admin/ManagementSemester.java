@@ -43,8 +43,8 @@ public class ManagementSemester {
     {
         PreparedStatement ps = conn.prepareStatement("update News set SemesterName=?,SemesterTime=? where SemesterId=?");
         ps.setString(1, s.getSemesterName());
-        ps.setDate(1, (Date) s.getSemesterTime());
-        ps.setString(1, s.getSemesterId());
+        ps.setDate(2, (Date) s.getSemesterTime());
+        ps.setString(3, s.getSemesterId());
         if(ps.executeUpdate()>0)
         {
             return true;

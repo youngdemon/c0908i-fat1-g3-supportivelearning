@@ -42,7 +42,7 @@ public class ManagementStaff {
     {
         PreparedStatement ps = conn.prepareStatement("update Staff set AccountId = ? where StaffId = ?");
         ps.setString(1, s.getStaffId());
-        ps.setString(1, s.getAccountId());
+        ps.setString(2, s.getAccountId());
 
         if(ps.executeUpdate()>0)
         {
