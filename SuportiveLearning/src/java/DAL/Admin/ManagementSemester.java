@@ -27,8 +27,8 @@ public class ManagementSemester {
     {
         PreparedStatement ps = conn.prepareStatement("insert into Semester values (?,?,?)");
         ps.setString(1, s.getSemesterId());
-        ps.setString(1, s.getSemesterName());
-        ps.setDate(1, (Date) s.getSemesterTime());
+        ps.setString(2, s.getSemesterName());
+        ps.setDate(3,s.getSemesterTime());
         if(ps.executeUpdate()>0)
         {
             return true;

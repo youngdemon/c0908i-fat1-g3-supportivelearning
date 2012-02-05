@@ -7,6 +7,7 @@
 
 <struts-config>
     <form-beans>
+        <form-bean name="SemesterActionForm" type="Bussiness.Admin.SemesterActionForm"/>
     
     </form-beans>
     
@@ -19,6 +20,9 @@
     </global-forwards>
 
     <action-mappings>
+        <action input="/Admin/addNewSemester.jsp" name="SemesterActionForm" path="/addNewSemester" scope="session" type="Bussiness.Admin.SemesterAction" validate="false">
+            <forward name="success" path="/welcomeStruts.jsp"/>
+        </action>
         <action path="/Welcome" forward="/welcomeStruts.jsp"/>
     </action-mappings>
     
