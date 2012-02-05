@@ -27,7 +27,7 @@ public class ManagementSubject
     {
         PreparedStatement ps=conn.prepareStatement("insert into Subject values (?,?)");
         ps.setString(1, s.getSubjectId());
-        ps.setString(1, s.getSubjectName());
+        ps.setString(2, s.getSubjectName());
         if(ps.executeUpdate()>0)
         {
             return true;
