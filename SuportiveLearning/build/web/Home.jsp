@@ -50,6 +50,7 @@
                 <jsp:include page="Admin/addNewStudent.jsp"></jsp:include>
                 <jsp:include page="Admin/addNewSubject.jsp"></jsp:include>
                 <jsp:include page="Admin/addNewFAQ.jsp"></jsp:include>
+                <jsp:include page="Admin/addNewStaff.jsp"></jsp:include>
             </div>
 
             <div id="LayerRight">
