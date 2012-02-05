@@ -23,14 +23,14 @@ public class ManagementNews {
         conn=DBConnection.getConnect();
     }
 
-    public boolean addNewNews(News s) throws SQLException
+    public boolean addNewNews(News n) throws SQLException
     {
         PreparedStatement ps = conn.prepareStatement("insert into News values (?,?,?,?,?)");
-        ps.setString(1, s.getNewsId());
-        ps.setString(1, s.getTitle());
-        ps.setString(1, s.getNews());
-        ps.setString(1, s.getImages());
-        ps.setDate(1, (java.sql.Date) s.getNewsDate());
+        ps.setString(1, n.getNewsId());
+        ps.setString(1, n.getTitle());
+        ps.setString(1, n.getNews());
+        ps.setString(1, n.getImages());
+        ps.setDate(1, (java.sql.Date) n.getNewsDate());
         if(ps.executeUpdate()>0)
         {
             return true;
@@ -41,14 +41,14 @@ public class ManagementNews {
         }
 
     }
-    public boolean updateNews(News s) throws SQLException
+    public boolean updateNews(News n) throws SQLException
     {
         PreparedStatement ps = conn.prepareStatement("update News set Title=?, News=?, Images=?, NewsDate=? where NewsId=?");
-        ps.setString(1, s.getTitle());
-        ps.setString(1, s.getNews());
-        ps.setString(1, s.getImages());
-        ps.setDate(1, (Date) s.getNewsDate());
-        ps.setString(1, s.getNewsId());
+        ps.setString(1, n.getTitle());
+        ps.setString(1, n.getNews());
+        ps.setString(1, n.getImages());
+        ps.setDate(1, (Date) n.getNewsDate());
+        ps.setString(1, n.getNewsId());
         if(ps.executeUpdate()>0)
         {
             return true;
@@ -58,11 +58,11 @@ public class ManagementNews {
             return true;
         }
     }
-    public boolean deleteNews(News s) throws SQLException
+    public boolean deleteNews(News n) throws SQLException
     {
 
         PreparedStatement ps = conn.prepareStatement("delete from News where NewsId = ?");
-        ps.setString(1, s.getNewsId());
+        ps.setString(1, n.getNewsId());
         if(ps.executeUpdate()>0)
         {
             return true;
