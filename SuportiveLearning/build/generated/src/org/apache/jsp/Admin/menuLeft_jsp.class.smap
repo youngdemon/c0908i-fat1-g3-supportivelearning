@@ -1,0 +1,13 @@
+SMAP
+menuLeft_jsp.java
+JSP
+*S JSP
+*F
++ 0 menuLeft.jsp
+Admin/menuLeft.jsp
+*L
+5,8:55
+12:82,8
+13,2:90
+14:64
+*E

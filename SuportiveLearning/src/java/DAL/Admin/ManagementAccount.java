@@ -14,7 +14,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 /**
  *
  * @author Ncuong
@@ -112,6 +111,21 @@ public class ManagementAccount {
             ex.printStackTrace();
             return false;
         }
+
+    }
+    public String getRoleByUserName(Account a)
+    {
+        try {
+            PreparedStatement ps = conn.prepareStatement("select * from Account where UserName like ?");
+            ps.setString(1,a.getUserName());
+            ResultSet rs=ps.executeQuery();
+            while(rs.next())
+            return rs.getString("RoleId");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ManagementAccount.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            return null;
 
     }
 }

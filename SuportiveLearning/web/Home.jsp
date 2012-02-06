@@ -41,11 +41,15 @@
 
             </div>
             <div id="LayerLeft">
+                <jsp:include page="Admin/menuLeft.jsp" />
             </div>
 
 
             <div id="LayerMain">
                 <jsp:include page="Admin/addNewSemester.jsp"></jsp:include>
+<<<<<<< .mine
+
+=======
                 <jsp:include page="Admin/addNewStaffAndBatch.jsp"></jsp:include>
                 <jsp:include page="Admin/addNewStudent.jsp"></jsp:include>
                 <jsp:include page="Admin/addNewSubject.jsp"></jsp:include>
@@ -58,7 +62,19 @@
             </div>
 
             <div id="LayerRight">
-                
+                <jsp:include page="Admin/login.jsp" />
+                <c:if test="${role=='R1'}">
+                <div id="divMenubar-Students">
+                    <ul>
+                    <li><a href="#1">Management Account</a></li>
+                    <li><a href="#2">Management Student</a></li>
+                    <li><a href="#3">Management Staff</a></li>
+                    <li><a href="#4">Management FAQS</a></li>
+                    <li><a href="#5">Management News</a></li>
+                    </ul>
+                </div>
+                </c:if>
+                <jsp:include page="Admin/listNews.jsp"/>
             </div>
             <div id="LayerFooter">
                 <center>

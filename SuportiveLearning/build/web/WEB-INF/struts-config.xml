@@ -8,8 +8,14 @@
 <struts-config>
     <form-beans>
 <<<<<<< .mine
+<<<<<<< .mine
+        <form-bean name="LoginActionForm" type="Bussiness.Admin.LoginActionForm"/>
+=======
+=======
+<<<<<<< .mine
         <form-bean name="CourseActionForm" type="Bussiness.Admin.CourseActionForm"/>
 =======
+>>>>>>> .r47
 
         <form-bean name="StaffActionForm" type="Bussiness.Admin.StaffActionForm"/>
 
@@ -20,6 +26,7 @@
         <form-bean name="StudentActionForm" type="Bussiness.Admin.StudentActionForm"/>
 
         <form-bean name="StaffAndBatchActionForm" type="Bussiness.Admin.StaffAndBatchActionForm"/>
+>>>>>>> .r46
         <form-bean name="SemesterActionForm" type="Bussiness.Admin.SemesterActionForm"/>
     
     </form-beans>
@@ -29,6 +36,7 @@
     </global-exceptions>
 
     <global-forwards>
+        <forward name="home" path="/Home.jsp"/>
         <forward name="welcome"  path="/Welcome.do"/>
     </global-forwards>
 
@@ -36,6 +44,10 @@
         <action input="/Admin/addNewSemester.jsp" name="SemesterActionForm" path="/addNewSemester" scope="session" type="Bussiness.Admin.SemesterAction" validate="false">
             <forward name="success" path="/welcomeStruts.jsp"/>
         </action>
+<<<<<<< .mine
+        <action input="/Admin/login.jsp" name="LoginActionForm" path="/Login" scope="session" type="Bussiness.Admin.LoginAction" validate="false"/>
+        <action path="/Welcome" forward="/welcomeStruts.jsp"/>
+=======
         <action input="/Admin/addNewStaffAndBatch.jsp" name="StaffAndBatchActionForm" path="/addNewStaffAndBatch" scope="session" type="Bussiness.Admin.StaffAndBatchAction" validate="false">
             <forward name="success" path="/welcomeStruts.jsp"/>
         </action>
