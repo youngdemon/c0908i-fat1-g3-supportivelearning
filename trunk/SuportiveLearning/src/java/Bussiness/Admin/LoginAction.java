@@ -5,12 +5,11 @@
 
 package Bussiness.Admin;
 
-import DAL.Admin.ManagementSemester;
-import Model.DBConnection;
-import Model.Entities.Admin.Semester;
-import java.sql.Date;
+import DAL.Admin.ManagementAccount;
+import Model.Entities.Admin.Account;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
@@ -19,7 +18,7 @@ import org.apache.struts.action.ActionMapping;
  *
  * @author Administrator
  */
-public class SemesterAction extends org.apache.struts.action.Action {
+public class LoginAction extends org.apache.struts.action.Action {
     
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
@@ -37,15 +36,24 @@ public class SemesterAction extends org.apache.struts.action.Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        SemesterActionForm f= (SemesterActionForm) form;
-        ManagementSemester MS=new ManagementSemester();
-        Semester s=new Semester();
-        s.setSemesterId(f.getTxtSemesterID());
-        s.setSemesterName(f.getTxtSemesterName());
-        s.setSemesterTime(DBConnection.convertStringToDate(f.getTxtSemesterDate()));
-        System.out.println(s.getSemesterId());
-        MS.addNewSemester(s);
+        HttpSession session=request.getSession();
+        LoginActionForm f=(LoginActionForm) form;
+        ManagementAccount MA=new ManagementAccount();
+        Account a=new Account();
+        a.setUserName(f.getTxtUserName());
+        a.setPassWord(f.getTxtPassword());
+        if(MA.checkLogin(a))
+        {
+            session.setAttribute("user",a.getUserName());
+            session.setAttribute("role",MA.getRoleByUserName(a));
 
-        return mapping.findForward("success");
+            return mapping.findForward("home");
+
+        }
+        else
+        {
+            session.setAttribute("err_mess","* Invalid password or username");
+            return mapping.findForward("home");
+        }
     }
 }

@@ -11,10 +11,20 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   private static java.util.Vector _jspx_dependants;
 
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_if_test;
+
   private org.apache.jasper.runtime.ResourceInjector _jspx_resourceInjector;
 
   public Object getDependants() {
     return _jspx_dependants;
+  }
+
+  public void _jspInit() {
+    _jspx_tagPool_c_if_test = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+  }
+
+  public void _jspDestroy() {
+    _jspx_tagPool_c_if_test.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -81,6 +91,9 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("            </div>\n");
       out.write("            <div id=\"LayerLeft\">\n");
+      out.write("                ");
+      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "Admin/menuLeft.jsp", out, false);
+      out.write("\n");
       out.write("            </div>\n");
       out.write("\n");
       out.write("\n");
@@ -88,6 +101,9 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                ");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "Admin/addNewSemester.jsp", out, false);
       out.write("\n");
+<<<<<<< .mine
+      out.write("\n");
+=======
       out.write("                ");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "Admin/addNewStaffAndBatch.jsp", out, false);
       out.write("\n");
@@ -115,7 +131,16 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            </div>\n");
       out.write("\n");
       out.write("            <div id=\"LayerRight\">\n");
-      out.write("                \n");
+      out.write("                ");
+      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "Admin/login.jsp", out, false);
+      out.write("\n");
+      out.write("                ");
+      if (_jspx_meth_c_if_0(_jspx_page_context))
+        return;
+      out.write("\n");
+      out.write("                ");
+      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "Admin/listNews.jsp", out, false);
+      out.write("\n");
       out.write("            </div>\n");
       out.write("            <div id=\"LayerFooter\">\n");
       out.write("                <center>\n");
@@ -144,5 +169,41 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
     } finally {
       _jspxFactory.releasePageContext(_jspx_page_context);
     }
+  }
+
+  private boolean _jspx_meth_c_if_0(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_0 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_0.setParent(null);
+    _jspx_th_c_if_0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${role=='R1'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_0 = _jspx_th_c_if_0.doStartTag();
+    if (_jspx_eval_c_if_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\n");
+        out.write("                <div id=\"divMenubar-Students\">\n");
+        out.write("                    <ul>\n");
+        out.write("                    <li><a href=\"#1\">Management Account</a></li>\n");
+        out.write("                    <li><a href=\"#2\">Management Student</a></li>\n");
+        out.write("                    <li><a href=\"#3\">Management Staff</a></li>\n");
+        out.write("                    <li><a href=\"#4\">Management FAQS</a></li>\n");
+        out.write("                    <li><a href=\"#5\">Management News</a></li>\n");
+        out.write("                    </ul>\n");
+        out.write("                </div>\n");
+        out.write("                ");
+        int evalDoAfterBody = _jspx_th_c_if_0.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_if_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
+      return true;
+    }
+    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
+    return false;
   }
 }

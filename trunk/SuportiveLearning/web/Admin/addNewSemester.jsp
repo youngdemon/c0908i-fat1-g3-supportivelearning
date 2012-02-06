@@ -8,11 +8,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
 <%@taglib prefix="html" uri="http://struts.apache.org/tags-html" %>
+<div id="header2">Add New Semester</div>
 <form action="addNewSemester.do" method="post">
     <table>
         <tr>
             <td>
-                ID
+                Semester ID
             </td>
             <td>
                 <html:text property="txtSemesterID" value="" />
@@ -20,7 +21,7 @@
         </tr>
         <tr>
             <td>
-                ID
+                Semester Name
             </td>
             <td>
                 <html:text property="txtSemesterName" value="" />

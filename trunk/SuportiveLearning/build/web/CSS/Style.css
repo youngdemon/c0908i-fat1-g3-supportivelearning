@@ -329,5 +329,35 @@ img {border:none;}
 .menu :hover ul :hover ul,
 .menu :hover ul :hover ul :hover ul,
 .menu :hover ul :hover ul :hover ul :hover ul,
-.menu :hover ul :hover ul :hover ul :hover ul :hover ul
-{left:90px; top:-4px; background: #fff; padding:3px 0; border:1px solid 999999; white-space:nowrap; width:93px; z-index:200; height:auto;}
+.menu :hover ul :hover ul :hover ul :hover ul :hover ul {left:90px; top:-4px; background: #fff; padding:3px 0; border:1px solid 999999; white-space:nowrap; width:93px; z-index:200; height:auto;}
+#divMenubar-Students{
+    float:left;
+    margin-left:0px;
+    margin-top:10px;
+}
+#divMenubar-Students ul{
+    list-style:none;
+    margin-top:25px;
+}
+#divMenubar-Students ul li a {
+    font-size:1.0em;
+    color:red;
+    text-decoration:none;
+}
+#divMenubar-Students ul li a:visited {color:red;}
+#divMenubar-Students ul li a:hover {color:magenta; text-decoration:underline;}
+#divMenubar-Students ul li a:active {color:#C7A317}
+#header
+{
+    background: url(../images/top.png) no-repeat;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+}
+#header2
+{
+    background: url(../images/topmain.png) no-repeat;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+}
