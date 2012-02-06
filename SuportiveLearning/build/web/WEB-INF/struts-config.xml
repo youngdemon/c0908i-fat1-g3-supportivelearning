@@ -7,9 +7,13 @@
 
 <struts-config>
     <form-beans>
+<<<<<<< .mine
+        <form-bean name="CourseActionForm" type="Bussiness.Admin.CourseActionForm"/>
+=======
 
         <form-bean name="StaffActionForm" type="Bussiness.Admin.StaffActionForm"/>
 
+>>>>>>> .r46
         <form-bean name="FAQActionForm" type="Bussiness.Admin.FAQActionForm"/>
 
         <form-bean name="SubjectActionForm" type="Bussiness.Admin.SubjectActionForm"/>
@@ -50,7 +54,13 @@
         <action input="/Admin/addNewFAQ.jsp" name="FAQActionForm" path="/addNewFAQ" scope="session" type="Bussiness.Admin.FAQAction" validate="false">
             <forward name="success" path="/welcomeStruts.jsp"/>
         </action>
+<<<<<<< .mine
+        <action input="/Admin/addNewCourse.jsp" name="CourseActionForm" path="/addNewCourse" scope="session" type="Bussiness.Admin.CourseAction" validate="false">
+            <forward name="success" path="/welcomeStruts.jsp"/>
+        </action>
+=======
 
+>>>>>>> .r46
     </action-mappings>
     
     <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>

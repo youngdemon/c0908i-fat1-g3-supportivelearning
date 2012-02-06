@@ -3,25 +3,18 @@
  * and open the template in the editor.
  */
 
-package Model.Entities.Admin;
-
-import java.sql.Date;
+package Bussiness.Admin;
 
 /**
  *
  * @author Administrator
  */
-public class Course {
+public class CourseActionForm extends org.apache.struts.action.ActionForm {
 
-    public Course()
-    {
-
-    }
-    
     private String CourseId;
     private String CourseName;
-    private Date DateStart;
-    private Date DateEnd;
+    private String DateStart;
+    private String DateEnd;
 
     public String getCourseId() {
         return CourseId;
@@ -39,19 +32,24 @@ public class Course {
         this.CourseName = CourseName;
     }
 
-    public Date getDateEnd() {
+    public String getDateEnd() {
         return DateEnd;
     }
 
-    public void setDateEnd(Date DateEnd) {
+    public void setDateEnd(String DateEnd) {
         this.DateEnd = DateEnd;
     }
 
-    public Date getDateStart() {
+    public String getDateStart() {
         return DateStart;
     }
 
-    public void setDateStart(Date DateStart) {
+    public void setDateStart(String DateStart) {
         this.DateStart = DateStart;
+    }
+
+    public CourseActionForm() {
+        super();
+        // TODO Auto-generated constructor stub
     }
 }
