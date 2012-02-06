@@ -53,7 +53,11 @@
                 <jsp:include page="Admin/addNewFAQ.jsp"></jsp:include>
                 <jsp:include page="Admin/addNewCourse.jsp"></jsp:include>
                 <jsp:include page="Admin/addNewStaff.jsp"></jsp:include>
+<<<<<<< .mine
+                <jsp:include page="Admin/addNewBatch.jsp"></jsp:include>
+=======
                 <jsp:include page="Admin/addNewChangeLeaning.jsp"></jsp:include>
+>>>>>>> .r56
 
             </div>
 

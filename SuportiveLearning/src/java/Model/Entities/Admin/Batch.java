@@ -5,7 +5,8 @@
 
 package Model.Entities.Admin;
 
-import java.util.Date;
+import java.sql.Date;
+
 
 /**
  *

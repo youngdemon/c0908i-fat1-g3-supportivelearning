@@ -125,9 +125,17 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                ");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "Admin/addNewStaff.jsp", out, false);
       out.write("\n");
+<<<<<<< .mine
+      out.write("                ");
+      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "Admin/addNewBatch.jsp", out, false);
+=======
       out.write("                ");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "Admin/addNewChangeLeaning.jsp", out, false);
+>>>>>>> .r56
       out.write("\n");
+<<<<<<< .mine
+      out.write("\n");
+=======
       out.write("\n");
 =======
       out.write("                ");
@@ -147,6 +155,7 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
 >>>>>>> .r55
+>>>>>>> .r56
       out.write("            </div>\n");
       out.write("\n");
       out.write("            <div id=\"LayerRight\">\n");
