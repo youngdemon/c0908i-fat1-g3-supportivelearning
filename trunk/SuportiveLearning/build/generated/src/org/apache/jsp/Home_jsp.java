@@ -101,33 +101,7 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                ");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "Admin/addNewSemester.jsp", out, false);
       out.write("\n");
-<<<<<<< .mine
       out.write("\n");
-=======
-      out.write("                ");
-      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "Admin/addNewStaffAndBatch.jsp", out, false);
-      out.write("\n");
-      out.write("                ");
-      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "Admin/addNewStudent.jsp", out, false);
-      out.write("\n");
-      out.write("                ");
-      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "Admin/addNewSubject.jsp", out, false);
-      out.write("\n");
-<<<<<<< .mine
-      out.write("                ");
-      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "Admin/addNewFAQ.jsp", out, false);
-      out.write("\n");
-      out.write("                ");
-      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "Admin/addNewCourse.jsp", out, false);
-      out.write("\n");
-=======
-      out.write("                ");
-      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "Admin/addNewFAQ.jsp", out, false);
-      out.write("\n");
-      out.write("                ");
-      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "Admin/addNewStaff.jsp", out, false);
-      out.write("\n");
->>>>>>> .r46
       out.write("            </div>\n");
       out.write("\n");
       out.write("            <div id=\"LayerRight\">\n");

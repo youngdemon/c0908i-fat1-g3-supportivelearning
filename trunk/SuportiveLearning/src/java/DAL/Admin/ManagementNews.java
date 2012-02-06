@@ -27,10 +27,10 @@ public class ManagementNews {
     {
         PreparedStatement ps = conn.prepareStatement("insert into News values (?,?,?,?,?)");
         ps.setString(1, n.getNewsId());
-        ps.setString(2, n.getTitle());
-        ps.setString(3, n.getNews());
-        ps.setString(4, n.getImages());
-        ps.setDate(5, (java.sql.Date) n.getNewsDate());
+        ps.setString(1, n.getTitle());
+        ps.setString(1, n.getNews());
+        ps.setString(1, n.getImages());
+        ps.setDate(1, (java.sql.Date) n.getNewsDate());
         if(ps.executeUpdate()>0)
         {
             return true;
@@ -45,10 +45,10 @@ public class ManagementNews {
     {
         PreparedStatement ps = conn.prepareStatement("update News set Title=?, News=?, Images=?, NewsDate=? where NewsId=?");
         ps.setString(1, n.getTitle());
-        ps.setString(2, n.getNews());
-        ps.setString(3, n.getImages());
-        ps.setDate(4, (Date) n.getNewsDate());
-        ps.setString(5, n.getNewsId());
+        ps.setString(1, n.getNews());
+        ps.setString(1, n.getImages());
+        ps.setDate(1, (Date) n.getNewsDate());
+        ps.setString(1, n.getNewsId());
         if(ps.executeUpdate()>0)
         {
             return true;
