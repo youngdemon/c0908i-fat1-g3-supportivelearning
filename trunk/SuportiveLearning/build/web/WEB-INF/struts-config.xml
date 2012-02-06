@@ -7,13 +7,8 @@
 
 <struts-config>
     <form-beans>
-<<<<<<< .mine
         <form-bean name="CourseActionForm" type="Bussiness.Admin.CourseActionForm"/>
-=======
-
         <form-bean name="StaffActionForm" type="Bussiness.Admin.StaffActionForm"/>
-
->>>>>>> .r46
         <form-bean name="FAQActionForm" type="Bussiness.Admin.FAQActionForm"/>
 
         <form-bean name="SubjectActionForm" type="Bussiness.Admin.SubjectActionForm"/>
@@ -21,11 +16,11 @@
 
         <form-bean name="StaffAndBatchActionForm" type="Bussiness.Admin.StaffAndBatchActionForm"/>
         <form-bean name="SemesterActionForm" type="Bussiness.Admin.SemesterActionForm"/>
-    
+
     </form-beans>
-    
+
     <global-exceptions>
-    
+
     </global-exceptions>
 
     <global-forwards>
@@ -54,19 +49,15 @@
         <action input="/Admin/addNewFAQ.jsp" name="FAQActionForm" path="/addNewFAQ" scope="session" type="Bussiness.Admin.FAQAction" validate="false">
             <forward name="success" path="/welcomeStruts.jsp"/>
         </action>
-<<<<<<< .mine
         <action input="/Admin/addNewCourse.jsp" name="CourseActionForm" path="/addNewCourse" scope="session" type="Bussiness.Admin.CourseAction" validate="false">
             <forward name="success" path="/welcomeStruts.jsp"/>
         </action>
-=======
-
->>>>>>> .r46
     </action-mappings>
-    
+
     <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
 
-    <message-resources parameter="com/myapp/struts/ApplicationResource"/>    
-    
+    <message-resources parameter="com/myapp/struts/ApplicationResource"/>
+
     <!-- ========================= Tiles plugin ===============================-->
     <!--
     This plugin initialize Tiles definition factory. This later can takes some
@@ -95,15 +86,15 @@
     Paths found in Tiles definitions are relative to the main context.
     -->
     <plug-in className="org.apache.struts.tiles.TilesPlugin" >
-        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
         <set-property property="moduleAware" value="true" />
     </plug-in>
-    
+
     <!-- ========================= Validator plugin ================================= -->
     <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
         <set-property
             property="pathnames"
             value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
     </plug-in>
-  
+
 </struts-config>
