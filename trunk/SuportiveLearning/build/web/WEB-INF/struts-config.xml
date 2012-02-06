@@ -8,11 +8,15 @@
 <struts-config>
     <form-beans>
 <<<<<<< .mine
+        <form-bean name="BatchActionForm" type="Bussiness.Admin.BatchActionForm"/>
+=======
+<<<<<<< .mine
         <form-bean name="ChangeLeaningActionForm" type="Bussiness.Admin.ChangeLeaningActionForm"/>
 =======
         <form-bean name="LoginActionForm" type="Bussiness.Admin.LoginActionForm"/>
 
 >>>>>>> .r55
+>>>>>>> .r56
         <form-bean name="CourseActionForm" type="Bussiness.Admin.CourseActionForm"/>
         <form-bean name="StaffActionForm" type="Bussiness.Admin.StaffActionForm"/>
         <form-bean name="FAQActionForm" type="Bussiness.Admin.FAQActionForm"/>
@@ -28,7 +32,12 @@
     </global-exceptions>
 
     <global-forwards>
+<<<<<<< .mine
+        <forward name="success" path="/welcomeStruts.jsp"/>
+        <forward name="success" path="/welcomeStruts.jsp"/>
+=======
         <forward name="home" path="/Home.jsp"/>
+>>>>>>> .r56
         <forward name="welcome"  path="/Welcome.do"/>
     </global-forwards>
 
@@ -59,10 +68,14 @@
         <action input="/Admin/addNewCourse.jsp" name="CourseActionForm" path="/addNewCourse" scope="session" type="Bussiness.Admin.CourseAction" validate="false">
             <forward name="success" path="/welcomeStruts.jsp"/>
         </action>
+<<<<<<< .mine
+        <action input="/Admin/addNewBatch.jsp" name="BatchActionForm" path="/addNewBatch" scope="session" type="Bussiness.Admin.BatchAction" validate="false"/>
+=======
         <action input="/Admin/addNewChangeLeaning.jsp" name="ChangeLeaningActionForm" path="/addNewChangeLeaning" scope="session" type="Bussiness.Admin.ChangeLeaningAction" validate="false">
             <forward name="success" path="/welcomeStruts.jsp"/>
         </action>
 
+>>>>>>> .r56
     </action-mappings>
     
     <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
