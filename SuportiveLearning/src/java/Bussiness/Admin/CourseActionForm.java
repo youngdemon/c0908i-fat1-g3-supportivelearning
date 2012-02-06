@@ -11,41 +11,41 @@ package Bussiness.Admin;
  */
 public class CourseActionForm extends org.apache.struts.action.ActionForm {
 
-    private String CourseId;
-    private String CourseName;
-    private String DateStart;
-    private String DateEnd;
+    private String txtCourseId;
+    private String txtCourseName;
+    private String txtDateStart;
+    private String txtDateEnd;
 
-    public String getCourseId() {
-        return CourseId;
+    public String getTxtCourseId() {
+        return txtCourseId;
     }
 
-    public void setCourseId(String CourseId) {
-        this.CourseId = CourseId;
+    public void setTxtCourseId(String txtCourseId) {
+        this.txtCourseId = txtCourseId;
     }
 
-    public String getCourseName() {
-        return CourseName;
+    public String getTxtCourseName() {
+        return txtCourseName;
     }
 
-    public void setCourseName(String CourseName) {
-        this.CourseName = CourseName;
+    public void setTxtCourseName(String txtCourseName) {
+        this.txtCourseName = txtCourseName;
     }
 
-    public String getDateEnd() {
-        return DateEnd;
+    public String getTxtDateEnd() {
+        return txtDateEnd;
     }
 
-    public void setDateEnd(String DateEnd) {
-        this.DateEnd = DateEnd;
+    public void setTxtDateEnd(String txtDateEnd) {
+        this.txtDateEnd = txtDateEnd;
     }
 
-    public String getDateStart() {
-        return DateStart;
+    public String getTxtDateStart() {
+        return txtDateStart;
     }
 
-    public void setDateStart(String DateStart) {
-        this.DateStart = DateStart;
+    public void setTxtDateStart(String txtDateStart) {
+        this.txtDateStart = txtDateStart;
     }
 
     public CourseActionForm() {

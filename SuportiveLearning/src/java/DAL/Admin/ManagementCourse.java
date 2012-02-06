@@ -8,10 +8,9 @@ package DAL.Admin;
 import Model.DBConnection;
 import Model.Entities.Admin.Course;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
+import java.sql.Date;
 /**
  *
  * @author DASDCO-S&D
@@ -27,8 +26,8 @@ public class ManagementCourse {
         PreparedStatement ps=conn.prepareStatement("insert into Course values (?,?,?,?)");
         ps.setString(1, c.getCourseId());
         ps.setString(2, c.getCourseName());
-        ps.setDate(3, (Date) c.getDateStart());
-        ps.setDate(4, (Date) c.getDateEnd());
+        ps.setDate(3, c.getDateStart());
+        ps.setDate(4, c.getDateEnd());
         if(ps.executeUpdate()>0)
         {
             return true;

@@ -28,7 +28,7 @@ public class ManagementFAQ {
         ps.setString(1, faq.getFAQId());
         ps.setString(2, faq.getQuestion());
         ps.setString(3, faq.getAnswer());
-        ps.setDate(4, (Date) faq.getFAQDate());
+        ps.setDate(4,faq.getFAQDate());
         if(ps.executeUpdate()>0)
         {
             return true;
