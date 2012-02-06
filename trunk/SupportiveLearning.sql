@@ -4,7 +4,6 @@ use master
 drop database SupportiveLearning
 use SupportiveLearning
 go
-select * from Account
 
 create table Roles
 (
@@ -146,6 +145,9 @@ create table Assignment
 	BatchId nvarchar(100) foreign key references Batch(BatchId)
 )
 go
+insert into Assignment values('ASM01','Java Sem IV','Doc','Java','1991-2-2','1991-2-9','SJ01','S01','B01')
+go
+
 create table MarkAssignment
 (
 	MarkAssignmentId nvarchar(100) primary key,
@@ -173,6 +175,7 @@ create table FAQ
 	Answer nvarchar(max),
 	FAQDate datetime
 )
+go
 
 create table ChangeLeaning
 (
@@ -180,8 +183,9 @@ create table ChangeLeaning
 	StudentId nvarchar(100) foreign key references Student(StudentId),
 	BatchId nvarchar(100) foreign key references Batch(BatchId),
 	Reason nvarchar(max),
-	DataChange datetime
+	DateChange datetime
 )
+go
 
 create table StaffAndBatch
 (
@@ -189,4 +193,8 @@ create table StaffAndBatch
 	StaffId nvarchar(100) foreign key references Staff(StaffId),
 	BatchId nvarchar(100) foreign key references Batch(BatchId),
 )
-select * from StaffAndBatch
+go
+insert into StaffAndBatch values('SAB01','S01','B01')
+go
+
+select * from ChangeLeaning

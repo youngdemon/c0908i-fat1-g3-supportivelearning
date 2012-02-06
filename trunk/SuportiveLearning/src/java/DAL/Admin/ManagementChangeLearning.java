@@ -29,7 +29,7 @@ public class ManagementChangeLearning {
         ps.setString(2, cl.getStudentId());
         ps.setString(3, cl.getBatchId());
         ps.setString(4, cl.getReason());
-        ps.setDate(5, (Date) cl.getDateChange());
+        ps.setDate(5, cl.getDateChange());
         if(ps.executeUpdate()>0)
         {
             return  true;

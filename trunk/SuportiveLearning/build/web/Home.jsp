@@ -47,12 +47,13 @@
 
             <div id="LayerMain">
                 <jsp:include page="Admin/addNewSemester.jsp"></jsp:include>
-                 <jsp:include page="Admin/addNewStaffAndBatch.jsp"></jsp:include>
+                <jsp:include page="Admin/addNewStaffAndBatch.jsp"></jsp:include>
                 <jsp:include page="Admin/addNewStudent.jsp"></jsp:include>
                 <jsp:include page="Admin/addNewSubject.jsp"></jsp:include>
                 <jsp:include page="Admin/addNewFAQ.jsp"></jsp:include>
                 <jsp:include page="Admin/addNewCourse.jsp"></jsp:include>
                 <jsp:include page="Admin/addNewStaff.jsp"></jsp:include>
+                <jsp:include page="Admin/addNewChangeLeaning.jsp"></jsp:include>
 
             </div>
 

@@ -6,8 +6,8 @@
 package Bussiness.Admin;
 
 import DAL.Admin.ManagementFAQ;
+import Model.DBConnection;
 import Model.Entities.Admin.FAQ;
-import java.sql.Date;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionForm;
@@ -42,7 +42,7 @@ public class FAQAction extends org.apache.struts.action.Action {
         s.setFAQId(f.getTxtFAQId());
         s.setQuestion(f.getTxtQuestion());
         s.setAnswer(f.getTxtAnswer());
-        s.setFAQDate(Date.valueOf(f.getTxtFAQDate()));
+        s.setFAQDate(DBConnection.convertStringToDate(f.getTxtFAQDate()));
         System.out.println(s.getFAQDate());
         MS.addFAQ(s);
 

@@ -5,10 +5,9 @@
 
 package Bussiness.Admin;
 
-import DAL.Admin.ManagementCourse;
+import DAL.Admin.ManagementChangeLearning;
 import Model.DBConnection;
-import Model.Entities.Admin.Course;
-import java.sql.Date;
+import Model.Entities.Admin.ChangeLeaning;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionForm;
@@ -19,7 +18,7 @@ import org.apache.struts.action.ActionMapping;
  *
  * @author Administrator
  */
-public class CourseAction extends org.apache.struts.action.Action {
+public class ChangeLeaningAction extends org.apache.struts.action.Action {
     
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
@@ -37,15 +36,16 @@ public class CourseAction extends org.apache.struts.action.Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        CourseActionForm f= (CourseActionForm) form;
-        ManagementCourse MC=new ManagementCourse();
-        Course s=new Course();
-        s.setCourseId(f.getTxtCourseId());
-        s.setCourseName(f.getTxtCourseName());
-        s.setDateStart(DBConnection.convertStringToDate(f.getTxtDateStart()));
-        s.setDateEnd(DBConnection.convertStringToDate(f.getTxtDateEnd()));
-        System.out.println(s.getCourseId());
-        MC.addNewCourse(s);
+        ChangeLeaningActionForm f= (ChangeLeaningActionForm) form;
+        ManagementChangeLearning MC=new ManagementChangeLearning();
+        ChangeLeaning s=new ChangeLeaning();
+        s.setChangeLeaningId(f.getTxtChangeLeaningId());
+        s.setStudentId(f.getTxtStudentId());
+        s.setBatchId(f.getTxtBatchId());
+        s.setReason(f.getTxtReason());
+        s.setDateChange(DBConnection.convertStringToDate(f.getTxtDateChange()));
+        System.out.println(s.getChangeLeaningId());
+        MC.addNewChangeLeaning(s);
 
         return mapping.findForward("success");
     }
