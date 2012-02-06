@@ -26,7 +26,7 @@ public class ManagementStaff {
     {
         PreparedStatement ps = conn.prepareStatement("insert into Staff values(?,?)");
         ps.setString(1, s.getStaffId());
-        ps.setString(2, s.getAccountId());
+        ps.setString(1, s.getAccountId());
 
         if(ps.executeUpdate()>0)
         {
@@ -42,7 +42,7 @@ public class ManagementStaff {
     {
         PreparedStatement ps = conn.prepareStatement("update Staff set AccountId = ? where StaffId = ?");
         ps.setString(1, s.getStaffId());
-        ps.setString(2, s.getAccountId());
+        ps.setString(1, s.getAccountId());
 
         if(ps.executeUpdate()>0)
         {

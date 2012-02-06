@@ -7,26 +7,7 @@
 
 <struts-config>
     <form-beans>
-<<<<<<< .mine
-<<<<<<< .mine
         <form-bean name="LoginActionForm" type="Bussiness.Admin.LoginActionForm"/>
-=======
-=======
-<<<<<<< .mine
-        <form-bean name="CourseActionForm" type="Bussiness.Admin.CourseActionForm"/>
-=======
->>>>>>> .r47
-
-        <form-bean name="StaffActionForm" type="Bussiness.Admin.StaffActionForm"/>
-
->>>>>>> .r46
-        <form-bean name="FAQActionForm" type="Bussiness.Admin.FAQActionForm"/>
-
-        <form-bean name="SubjectActionForm" type="Bussiness.Admin.SubjectActionForm"/>
-        <form-bean name="StudentActionForm" type="Bussiness.Admin.StudentActionForm"/>
-
-        <form-bean name="StaffAndBatchActionForm" type="Bussiness.Admin.StaffAndBatchActionForm"/>
->>>>>>> .r46
         <form-bean name="SemesterActionForm" type="Bussiness.Admin.SemesterActionForm"/>
     
     </form-beans>
@@ -44,35 +25,8 @@
         <action input="/Admin/addNewSemester.jsp" name="SemesterActionForm" path="/addNewSemester" scope="session" type="Bussiness.Admin.SemesterAction" validate="false">
             <forward name="success" path="/welcomeStruts.jsp"/>
         </action>
-<<<<<<< .mine
         <action input="/Admin/login.jsp" name="LoginActionForm" path="/Login" scope="session" type="Bussiness.Admin.LoginAction" validate="false"/>
         <action path="/Welcome" forward="/welcomeStruts.jsp"/>
-=======
-        <action input="/Admin/addNewStaffAndBatch.jsp" name="StaffAndBatchActionForm" path="/addNewStaffAndBatch" scope="session" type="Bussiness.Admin.StaffAndBatchAction" validate="false">
-            <forward name="success" path="/welcomeStruts.jsp"/>
-        </action>
-
-        <action input="/Admin/addNewStaff.jsp" name="StaffActionForm" path="/addNewStaff" scope="session" type="Bussiness.Admin.StaffAction" validate="false">
-            <forward name="success" path="/welcomeStruts.jsp"/>
-        </action>
-
-        <action input="/Admin/addNewStudent.jsp" name="StudentActionForm" path="/addNewStudent" scope="session" type="Bussiness.Admin.StudentAction">
-            <forward name="success" path="/welcomeStruts.jsp"/>
-        </action>
-        <action input="/Admin/addNewSubject.jsp" name="SubjectActionForm" path="/addNewSubject" scope="session" type="Bussiness.Admin.SubjectAction">
-            <forward name="success" path="/welcomeStruts.jsp"/>
-        </action>
-
-        <action input="/Admin/addNewFAQ.jsp" name="FAQActionForm" path="/addNewFAQ" scope="session" type="Bussiness.Admin.FAQAction" validate="false">
-            <forward name="success" path="/welcomeStruts.jsp"/>
-        </action>
-<<<<<<< .mine
-        <action input="/Admin/addNewCourse.jsp" name="CourseActionForm" path="/addNewCourse" scope="session" type="Bussiness.Admin.CourseAction" validate="false">
-            <forward name="success" path="/welcomeStruts.jsp"/>
-        </action>
-=======
-
->>>>>>> .r46
     </action-mappings>
     
     <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>

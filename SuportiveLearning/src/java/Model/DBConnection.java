@@ -22,8 +22,8 @@ public class DBConnection {
     public static Connection getConnect() {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            String uri = "jdbc:sqlserver://TANKJ-PC;databaseName=SupportiveLearning";
-            conn = DriverManager.getConnection(uri, "sa", "123456");
+            String uri = "jdbc:sqlserver://PC2012020317SGB\\VANGND;databaseName=SupportiveLearning";
+            conn = DriverManager.getConnection(uri, "sa", "fat123456");
 
         } catch (SQLException ex) {
             conn = null;
