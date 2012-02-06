@@ -43,7 +43,7 @@ public class SemesterAction extends org.apache.struts.action.Action {
         s.setSemesterId(f.getTxtSemesterID());
         s.setSemesterName(f.getTxtSemesterName());
         s.setSemesterTime(DBConnection.convertStringToDate(f.getTxtSemesterDate()));
-        System.out.println(s.getSemesterId());
+        //System.out.println(s.getSemesterId());
         MS.addNewSemester(s);
 
         return mapping.findForward("success");
