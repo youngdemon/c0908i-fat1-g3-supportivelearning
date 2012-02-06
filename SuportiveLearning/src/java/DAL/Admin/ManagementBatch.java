@@ -27,10 +27,10 @@ public class ManagementBatch {
     {
         PreparedStatement ps = conn.prepareStatement("insert into Batch values(?,?,?,?,?)");
         ps.setString(1, b.getBatchId());
-        ps.setString(1, b.getBatchName());
-        ps.setDate(1, (Date) b.getStartDate());
-        ps.setString(1, b.getCourseId());
-        ps.setString(1, b.getSemesterId());
+        ps.setString(2, b.getBatchName());
+        ps.setDate(3, (Date) b.getStartDate());
+        ps.setString(4, b.getCourseId());
+        ps.setString(5, b.getSemesterId());
 
         if(ps.executeUpdate()>0)
         {
@@ -46,10 +46,10 @@ public class ManagementBatch {
     {
         PreparedStatement ps = conn.prepareStatement("update Batcg set BatchName=?,StartDate=?,CourseId=?,SemesterId=? where BatchId=?");
         ps.setString(1, b.getBatchName());
-        ps.setDate(1, (Date) b.getStartDate());
-        ps.setString(1, b.getCourseId());
-        ps.setString(1, b.getSemesterId());
-        ps.setString(1, b.getBatchId());
+        ps.setDate(2, (Date) b.getStartDate());
+        ps.setString(3, b.getCourseId());
+        ps.setString(4, b.getSemesterId());
+        ps.setString(5, b.getBatchId());
 
         if(ps.executeUpdate()>0)
         {

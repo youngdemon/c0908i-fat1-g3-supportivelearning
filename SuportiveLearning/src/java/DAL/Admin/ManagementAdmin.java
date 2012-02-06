@@ -25,7 +25,7 @@ public class ManagementAdmin {
     {
         PreparedStatement ps = conn.prepareStatement("?,?");
         ps.setString(1, a.getAdminId());
-        ps.setString(1, a.getAccountId());
+        ps.setString(2, a.getAccountId());
 
         if(ps.executeUpdate()>0)
         {
@@ -41,7 +41,7 @@ public class ManagementAdmin {
     {
         PreparedStatement ps = conn.prepareStatement("update Admin set AccountId = ? where AdminId = ?");
         ps.setString(1, a.getAccountId());
-        ps.setString(1, a.getAdminId());
+        ps.setString(2, a.getAdminId());
 
         if(ps.executeUpdate()>0)
         {
