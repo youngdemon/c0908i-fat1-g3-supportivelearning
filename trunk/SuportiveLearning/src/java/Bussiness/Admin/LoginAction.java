@@ -45,8 +45,16 @@ public class LoginAction extends org.apache.struts.action.Action {
         if(MA.checkLogin(a))
         {
             session.setAttribute("user",a.getUserName());
-            session.setAttribute("role",MA.getRoleByUserName(a));
-
+            String role=MA.getRoleByUserName(a);
+            session.setAttribute("role",role);
+            if(role.equals("R2"))
+            {
+                session.setAttribute("staffId",MA.getStaffIdByUserName(a));
+            }
+            if(role.equals("R3"))
+            {
+                session.setAttribute("studentId",MA.getStudentIdByUserName(a));
+            }
             return mapping.findForward("home");
 
         }

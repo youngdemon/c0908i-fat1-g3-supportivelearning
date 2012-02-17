@@ -16,22 +16,22 @@ public class Staff {
 
     }
 
-    private String StaffId;
-    private String AccountId;
+    private int staffId;
 
     public String getAccountId() {
-        return AccountId;
+        return accountId;
     }
 
-    public void setAccountId(String AccountId) {
-        this.AccountId = AccountId;
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
     }
 
-    public String getStaffId() {
-        return StaffId;
+    public int getStaffId() {
+        return staffId;
     }
 
-    public void setStaffId(String StaffId) {
-        this.StaffId = StaffId;
+    public void setStaffId(int staffId) {
+        this.staffId = staffId;
     }
+    private String accountId;
 }

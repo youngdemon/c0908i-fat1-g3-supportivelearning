@@ -12,68 +12,109 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-    </head><link href="CSS/Style.css"  rel="stylesheet" type="text/css" />
+        <link type="text/css" href="CSS/smoothness/jquery-ui-1.8.17.custom.css" rel="stylesheet" />
+        <link type="text/css" href="CSS/Style.css" rel="stylesheet" />
+        <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui-1.8.17.custom.min.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $('#datepicker').datepicker({
+                });
+                $('#datepicker2').datepicker({
+                });
+                $('#datepicker2').datepicker("option", "dateFormat",'dd/mm/yy');
+                $('#datepicker').datepicker("option", "dateFormat",'dd/mm/yy');
+
+            });
+        </script>
+    </head>
     <body>
         <div id="LayerBody">
             <div id="LayerMenu">
                 <ul class="menu">
-	<li class="top"><a href="#" class="top_link"><span>Home</span></a></li>
-	<li class="top"><a href="#" class="top_link"><span>Course</span></a>
-		<ul class="sub">
-			<li><a href="#">Sample Menu This is some longer text</a></li>
-			<li><a href="#">Sample Menu</a></li>
-            <li><a href="#">Sample Menu</a></li>
-            <li><a href="#">Sample Menu</a></li>
-            <li><a href="#">Sample Menu</a></li>
-		</ul>
-	</li>
-	<li class="top"><a href="#" class="top_link"><span>Mark View</span></a>
-		<ul class="sub">
-			<li><a href="#">Sample Menu This is some longer text</a></li>
-            <li><a href="#">Sample Menu</a></li>
-            <li><a href="#">Sample Menu</a></li>
-            <li><a href="#">Sample Menu</a></li>
-		</ul>
-	</li>
-	<li class="top"><a href="#" class="top_link"><span>Site News</span></a></li>
-	<li class="top"><a href="#" class="top_link"><span>FAQS</span></a></li>
-</ul>
-
+                    <li class="top"><a href="#" class="top_link"><span>Home</span></a></li>
+                    <li class="top"><a href="#" class="top_link"><span>Course</span></a>
+                        <ul class="sub">
+                            <li><a href="#">Sample Menu This is some longer text</a></li>
+                            <li><a href="#">Sample Menu</a></li>
+                            <li><a href="#">Sample Menu</a></li>
+                            <li><a href="#">Sample Menu</a></li>
+                            <li><a href="Staff/listBatch.jsp"">Sample Menu</a></li>
+                        </ul>
+                    </li>
+                    <li class="top"><a href="#" class="top_link"><span>Mark View</span></a>
+                        <ul class="sub">
+                            <li><a href="#">Sample Menu This is some longer text</a></li>
+                            <li><a href="#">Sample Menu</a></li>
+                            <li><a href="#">Sample Menu</a></li>
+                            <li><a href="#">Sample Menu</a></li>
+                        </ul>
+                    </li>
+                    <li class="top"><a href="#" class="top_link"><span>Site News</span></a></li>
+                    <li class="top"><a href="#" class="top_link"><span>FAQS</span></a></li>
+                </ul>
             </div>
             <div id="LayerLeft">
                 <jsp:include page="Admin/menuLeft.jsp" />
             </div>
-
-
             <div id="LayerMain">
-                <jsp:include page="Admin/addNewSemester.jsp"></jsp:include>
-                <jsp:include page="Admin/addNewStaffAndBatch.jsp"></jsp:include>
-                <jsp:include page="Admin/addNewStudent.jsp"></jsp:include>
-                <jsp:include page="Admin/addNewSubject.jsp"></jsp:include>
-                <jsp:include page="Admin/addNewFAQ.jsp"></jsp:include>
-                <jsp:include page="Admin/addNewCourse.jsp"></jsp:include>
-                <jsp:include page="Admin/addNewStaff.jsp"></jsp:include>
-<<<<<<< .mine
-                <jsp:include page="Admin/addNewBatch.jsp"></jsp:include>
-=======
-                <jsp:include page="Admin/addNewChangeLeaning.jsp"></jsp:include>
->>>>>>> .r56
+                <c:if test="${not empty requestScope.action}">
+                    <c:if test="${requestScope.action=='mngStaff'}">
+                        <jsp:include page="Admin/addNewStaff.jsp" />
+                    </c:if>
+                    <c:if test="${requestScope.action=='mngStudent'}">
+                        <jsp:include page="Admin/addNewStudent.jsp" />
+                    </c:if>
 
+                    <c:if test="${requestScope.action=='listBatch'}">
+                        <jsp:include page="Staff/listBatch.jsp" />
+                    </c:if>
+                    <c:if test="${requestScope.action=='listBatchMarkAssignment'}">
+                        <jsp:include page="Admin/listBatchMarkAssignment.jsp" />
+                    </c:if>
+                    <c:if test="${requestScope.action=='mngAssigmentStaff'}">
+                        <jsp:include page="Staff/listAssignmentForStaff.jsp"/>
+                    </c:if>
+                    <c:if test="${requestScope.action=='listSubjectBySemID'}">
+                        <jsp:include page="Admin/listSubjectBySemesterID.jsp"/>
+                    </c:if>
+                    <c:if test="${requestScope.action=='listSubjectForStaff'}">
+                        <jsp:include page="Admin/listSubjectBySemForStaff.jsp"/>
+                    </c:if>
+                    <c:if test="${requestScope.action=='listSubjectMarkAssignment'}">
+                        <jsp:include page="Admin/listSubjectMarkAssignment.jsp"/>
+                    </c:if>
+                    <c:if test="${requestScope.action=='mngAssigmentStudent'}">
+                        <jsp:include page="Staff/listAssignment.jsp"/>
+                    </c:if>
+
+                    <c:if test="${requestScope.action=='listMarkAssignment'}">
+                        <jsp:include page="Staff/listMarkAssignment.jsp"/>
+                    </c:if>
+
+                    <c:if test="${requestScope.action=='updateMarkAssignment'}">
+                        <jsp:include page="Staff/updateMark.jsp"/>
+                    </c:if>
+
+                    <c:if test="${requestScope.action=='listAssignmentMarkAssignment'}">
+                        <jsp:include page="Staff/listAssignmentMarkAssignment.jsp"/>
+                    </c:if>
+                    <c:if test="${requestScope.action=='addNewAssignment'}">
+                        <jsp:include page="Staff/addNewAssignment.jsp"/>
+                    </c:if>
+                    <c:if test="${requestScope.action=='detailAssignment'}">
+                        <jsp:include page="Staff/detailAssigment.jsp"/>
+                    </c:if>
+                    <c:if test="${requestScope.action=='submitAssignment'}">
+                        <jsp:include page="Student/submitAssignment.jsp"/>
+                    </c:if>
+                </c:if>
+                     <c:if test="${requestScope.mess=='addSuccess'}">
+                        <jsp:include page="Admin/addSuccess.jsp"/>
+                    </c:if>
             </div>
-
             <div id="LayerRight">
                 <jsp:include page="Admin/login.jsp" />
-                <c:if test="${role=='R1'}">
-                <div id="divMenubar-Students">
-                    <ul>
-                    <li><a href="#1">Management Account</a></li>
-                    <li><a href="#2">Management Student</a></li>
-                    <li><a href="#3">Management Staff</a></li>
-                    <li><a href="#4">Management FAQS</a></li>
-                    <li><a href="#5">Management News</a></li>
-                    </ul>
-                </div>
-                </c:if>
                 <jsp:include page="Admin/listNews.jsp"/>
             </div>
             <div id="LayerFooter">
@@ -81,15 +122,9 @@
                     <strong><strong><a href="index.asp">Trang Chá»§</a>|<a href="index.asp">Tuyá»ƒn Dá»¥ng </a>|<a href="index.asp">LiÃªn Há»‡</a></strong> | <a href="admin/dangnhap.asp">Äiá»u HÃ nh
                         </a></strong>
                 </center>
-
-
-
             </div>
             <div id="LayerBanner"></div>
             <div id="LayerLogo"></div>
         </div>
-
-
     </body>
-
 </html>

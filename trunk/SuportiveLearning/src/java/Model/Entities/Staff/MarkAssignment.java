@@ -5,7 +5,7 @@
 
 package Model.Entities.Staff;
 
-import java.util.Date;
+import java.sql.Date;
 
 /**
  *
@@ -14,64 +14,60 @@ import java.util.Date;
 public class MarkAssignment
 {
     public MarkAssignment()
-    {
-        
+    {        
     }
-    private String MarAssignmentId;
-    private String StudentId;
-    private String Assignment;
-    private String FileUpload;
-    private Float MarkAssignment;
-    private Date DateUpload;
+    private int markAssignmentId;
+    private int studentId;
+    private int assignmentId;
+    private String fileUpload;
 
-    public String getAssignment() {
-        return Assignment;
+    public int getAssignmentId() {
+        return assignmentId;
     }
 
-    public void setAssignment(String Assignment) {
-        this.Assignment = Assignment;
+    public void setAssignmentId(int assignmentId) {
+        this.assignmentId = assignmentId;
     }
 
     public Date getDateUpload() {
-        return DateUpload;
+        return dateUpload;
     }
 
-    public void setDateUpload(Date DateUpload) {
-        this.DateUpload = DateUpload;
+    public void setDateUpload(Date dateUpload) {
+        this.dateUpload = dateUpload;
     }
 
     public String getFileUpload() {
-        return FileUpload;
+        return fileUpload;
     }
 
-    public void setFileUpload(String FileUpload) {
-        this.FileUpload = FileUpload;
-    }
-
-    public String getMarAssignmentId() {
-        return MarAssignmentId;
-    }
-
-    public void setMarAssignmentId(String MarAssignmentId) {
-        this.MarAssignmentId = MarAssignmentId;
+    public void setFileUpload(String fileUpload) {
+        this.fileUpload = fileUpload;
     }
 
     public Float getMarkAssignment() {
-        return MarkAssignment;
+        return markAssignment;
     }
 
-    public void setMarkAssignment(Float MarkAssignment) {
-        this.MarkAssignment = MarkAssignment;
+    public void setMarkAssignment(Float markAssignment) {
+        this.markAssignment = markAssignment;
     }
 
-    public String getStudentId() {
-        return StudentId;
+    public int getMarkAssignmentId() {
+        return markAssignmentId;
     }
 
-    public void setStudentId(String StudentId) {
-        this.StudentId = StudentId;
+    public void setMarkAssignmentId(int markAssignmentId) {
+        this.markAssignmentId = markAssignmentId;
     }
-    
-    
 
+    public int getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(int studentId) {
+        this.studentId = studentId;
+    }
+    private Float markAssignment;
+    private Date dateUpload;
 }

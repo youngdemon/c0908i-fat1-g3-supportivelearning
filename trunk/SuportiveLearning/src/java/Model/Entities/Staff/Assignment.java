@@ -5,7 +5,7 @@
 
 package Model.Entities.Staff;
 
-import java.util.Date;
+import java.sql.Date;
 
 /**
  *
@@ -13,92 +13,90 @@ import java.util.Date;
  */
 public class Assignment
 {
-    public Assignment()
-    {
-        
-    }
-    private String AssignmentId;
-    private String AssignmentName;
-    private String AssignmentFile;
-    private String Assignment;
-    private Date AssignmentStartDate;
-    private Date AssignmentEndDate;
-    private String SubjectId;
-    private String StaffId;
-    private String BatchId;
 
-    public String getAssignment() {
-        return Assignment;
+    public Assignment() {
     }
 
-    public void setAssignment(String Assignment) {
-        this.Assignment = Assignment;
+    private int assignmentId;
+    private String assignmentName;
+    private String assignmentFile;
+    private String descriptions;
+    private Date assignmentStartDate;
+    private Date assignmentEndDate;
+    private int subjectId;
+    private int batchId;
+    private int status;
+
+    public int getStatus() {
+        return status;
     }
 
+    public void setStatus(int status) {
+        this.status = status;
+    }
     public Date getAssignmentEndDate() {
-        return AssignmentEndDate;
+        return assignmentEndDate;
     }
 
-    public void setAssignmentEndDate(Date AssignmentEndDate) {
-        this.AssignmentEndDate = AssignmentEndDate;
+    public void setAssignmentEndDate(Date assignmentEndDate) {
+        this.assignmentEndDate = assignmentEndDate;
     }
 
     public String getAssignmentFile() {
-        return AssignmentFile;
+        return assignmentFile;
     }
 
-    public void setAssignmentFile(String AssignmentFile) {
-        this.AssignmentFile = AssignmentFile;
+    public void setAssignmentFile(String assignmentFile) {
+        this.assignmentFile = assignmentFile;
     }
 
-    public String getAssignmentId() {
-        return AssignmentId;
+    public int getAssignmentId() {
+        return assignmentId;
     }
 
-    public void setAssignmentId(String AssignmentId) {
-        this.AssignmentId = AssignmentId;
+    public void setAssignmentId(int assignmentId) {
+        this.assignmentId = assignmentId;
     }
 
     public String getAssignmentName() {
-        return AssignmentName;
+        return assignmentName;
     }
 
-    public void setAssignmentName(String AssignmentName) {
-        this.AssignmentName = AssignmentName;
+    public void setAssignmentName(String assignmentName) {
+        this.assignmentName = assignmentName;
     }
 
     public Date getAssignmentStartDate() {
-        return AssignmentStartDate;
+        return assignmentStartDate;
     }
 
-    public void setAssignmentStartDate(Date AssignmentStartDate) {
-        this.AssignmentStartDate = AssignmentStartDate;
+    public void setAssignmentStartDate(Date assignmentStartDate) {
+        this.assignmentStartDate = assignmentStartDate;
     }
 
-    public String getBatchId() {
-        return BatchId;
+    public String getDescriptions() {
+        return descriptions;
     }
 
-    public void setBatchId(String BatchId) {
-        this.BatchId = BatchId;
+    public void setDescriptions(String descriptions) {
+        this.descriptions = descriptions;
     }
 
-    public String getStaffId() {
-        return StaffId;
+    public int getBatchId() {
+        return batchId;
     }
 
-    public void setStaffId(String StaffId) {
-        this.StaffId = StaffId;
+    public void setBatchId(int batchId) {
+        this.batchId = batchId;
     }
 
-    public String getSubjectId() {
-        return SubjectId;
+    public int getSubjectId() {
+        return subjectId;
     }
 
-    public void setSubjectId(String SubjectId) {
-        this.SubjectId = SubjectId;
+    public void setSubjectId(int subjectId) {
+        this.subjectId = subjectId;
     }
-    
-    
+
 
 }

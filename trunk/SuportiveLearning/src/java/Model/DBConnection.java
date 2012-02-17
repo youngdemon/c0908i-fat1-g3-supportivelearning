@@ -10,6 +10,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -22,8 +24,8 @@ public class DBConnection {
     public static Connection getConnect() {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            String uri = "jdbc:sqlserver://ADMIN-TA;databaseName=SupportiveLearning";
-            conn = DriverManager.getConnection(uri, "sa", "123");
+            String uri = "jdbc:sqlserver://PC2012020317SGB\\VANGND;databaseName=SupportiveLearning";
+            conn = DriverManager.getConnection(uri, "sa", "fat123456");
 
         } catch (SQLException ex) {
             conn = null;
@@ -32,7 +34,7 @@ public class DBConnection {
         }
         return conn;
     }
-public static Date convertStringToDate(String sDate)
+    public static Date convertStringToDate(String sDate)
     {
         Date date=null;
 
@@ -50,7 +52,24 @@ public static Date convertStringToDate(String sDate)
     {
         return format.format(date);
     }
+    private  String strDate;
+    public String getConvertToDate()
+    {
+        try {
+            return format.format(format2.parse(strDate));
+        } catch (ParseException ex) {
+            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
 
+    public String getStrDate() {
+        return strDate;
+    }
+
+    public void setStrDate(String strDate) {
+        this.strDate = strDate;
+    }
     public static boolean isDate(String sDate){
         try {
             format.setLenient(false);
@@ -67,5 +86,5 @@ public static Date convertStringToDate(String sDate)
     }
     private static SimpleDateFormat format=new SimpleDateFormat("dd/MM/yyyy");
 
-
+    private static SimpleDateFormat format2=new SimpleDateFormat("yyyy-MM-dd");
 }

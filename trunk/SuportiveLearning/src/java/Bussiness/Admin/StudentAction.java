@@ -35,15 +35,15 @@ public class StudentAction extends org.apache.struts.action.Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        StudentActionForm f= (StudentActionForm) form;
-        ManagementStudent MS=new ManagementStudent();
-        Student s=new Student();
-        s.setStudentId(f.getTxtStudentId());
-        s.setAccountId(f.getTxtAccountId());
-        s.setRollNumber(f.getTxtRollNumber());
-        s.setBatchId(f.getTxtBatchId());
-        System.out.println(s.getAccountId());
-        MS.addNewStudent(s);
+//        StudentActionForm f= (StudentActionForm) form;
+//        ManagementStudent MS=new ManagementStudent();
+//        Student s=new Student();
+//        s.setStudentId(f.getTxtStudentId());
+//        s.setAccountId(f.getTxtAccountId());
+//        s.setRollNumber(f.getTxtRollNumber());
+//        s.setBatchId(f.getTxtBatchId());
+//        System.out.println(s.getAccountId());
+//        MS.addNewStudent(s);
         return mapping.findForward("success");
     }
 }

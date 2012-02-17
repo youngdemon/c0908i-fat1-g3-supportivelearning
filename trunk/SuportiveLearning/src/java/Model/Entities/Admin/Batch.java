@@ -7,7 +7,6 @@ package Model.Entities.Admin;
 
 import java.sql.Date;
 
-
 /**
  *
  * @author Administrator
@@ -18,51 +17,50 @@ public class Batch {
     {
 
     }
-    
-    private String BatchId;
-    private String BatchName;
-    private Date StartDate;
-    private String CourseId;
-    private String SemesterId;
+    private int batchId;
+    private String batchName;
+    private Date startDate;
 
-    public String getBatchId() {
-        return BatchId;
+    public int getBatchId() {
+        return batchId;
     }
 
-    public void setBatchId(String BatchId) {
-        this.BatchId = BatchId;
+    public void setBatchId(int batchId) {
+        this.batchId = batchId;
     }
 
     public String getBatchName() {
-        return BatchName;
+        return batchName;
     }
 
-    public void setBatchName(String BatchName) {
-        this.BatchName = BatchName;
+    public void setBatchName(String batchName) {
+        this.batchName = batchName;
     }
 
-    public String getCourseId() {
-        return CourseId;
+    public int getSemesterId() {
+        return semesterId;
     }
 
-    public void setCourseId(String CourseId) {
-        this.CourseId = CourseId;
+    public void setSemesterId(int semesterId) {
+        this.semesterId = semesterId;
     }
 
-    public String getSemesterId() {
-        return SemesterId;
+    public int getStaffId() {
+        return staffId;
     }
 
-    public void setSemesterId(String SemesterId) {
-        this.SemesterId = SemesterId;
+    public void setStaffId(int staffId) {
+        this.staffId = staffId;
     }
 
     public Date getStartDate() {
-        return StartDate;
+        return startDate;
     }
 
-    public void setStartDate(Date StartDate) {
-        this.StartDate = StartDate;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
+    private int staffId;
+    private int semesterId;
 
 }

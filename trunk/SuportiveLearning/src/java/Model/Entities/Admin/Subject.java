@@ -17,24 +17,31 @@ public class Subject {
     {
 
     }
+    private int subjectId;
+    private String subjectName;
+    private int semesterId;
 
-    private String SubjectId;
-    private String SubjectName;
-
-    public String getSubjectId() {
-        return SubjectId;
+    public int getSemesterId() {
+        return semesterId;
     }
 
-    public void setSubjectId(String SubjectId) {
-        this.SubjectId = SubjectId;
+    public void setSemesterId(int semesterId) {
+        this.semesterId = semesterId;
+    }
+
+    public int getSubjectId() {
+        return subjectId;
+    }
+
+    public void setSubjectId(int subjectId) {
+        this.subjectId = subjectId;
     }
 
     public String getSubjectName() {
-        return SubjectName;
+        return subjectName;
     }
 
-    public void setSubjectName(String SubjectName) {
-        this.SubjectName = SubjectName;
+    public void setSubjectName(String subjectName) {
+        this.subjectName = subjectName;
     }
-
 }

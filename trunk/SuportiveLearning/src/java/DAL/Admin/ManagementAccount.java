@@ -28,19 +28,19 @@ public class ManagementAccount {
     {
         PreparedStatement ps = conn.prepareStatement("insert into Account values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
         ps.setString(1, a.getAccountId());
-        ps.setString(2, a.getRoleId());
-        ps.setString(3, a.getUserName());
-        ps.setString(4, a.getPassWord());
-        ps.setDate(5, (Date) a.getDateCreate());
-        ps.setString(6, a.getFullName());
-        ps.setDate(7, (Date) a.getBirthday());
-        ps.setInt(8, a.getGender());
-        ps.setString(9, a.getPhone());
-        ps.setString(10, a.getEmail());
-        ps.setString(11, a.getAddress());
-        ps.setInt(12, a.getStatus());
-        ps.setDate(13, (Date) a.getLastLogin());
-        ps.setInt(14, a.getAlowLogin());
+        ps.setString(1, a.getRoleId());
+        ps.setString(1, a.getUserName());
+        ps.setString(1, a.getPassWord());
+        ps.setDate(1, (Date) a.getDateCreate());
+        ps.setString(1, a.getFullName());
+        ps.setDate(1, (Date) a.getBirthday());
+        ps.setInt(1, a.getGender());
+        ps.setString(1, a.getPhone());
+        ps.setString(1, a.getEmail());
+        ps.setString(1, a.getAddress());
+        ps.setInt(1, a.getStatus());
+        ps.setDate(1, (Date) a.getLastLogin());
+        ps.setInt(1, a.getAlowLogin());
 
         if(ps.executeUpdate()>0)
         {
@@ -56,19 +56,19 @@ public class ManagementAccount {
     {
         PreparedStatement ps = conn.prepareStatement("update Account set RoleId=?,UserName=?,PassWord=?,DateCreate=?,FullName=?,Birthday=?,Gender=?,Phone=?,Email=?,Address=?,Status=?,LastLogin=?,AlowLogin=? where AccountId=?)");
         ps.setString(1, a.getRoleId());
-        ps.setString(2, a.getUserName());
-        ps.setString(3, a.getPassWord());
-        ps.setDate(4, (Date) a.getDateCreate());
-        ps.setString(5, a.getFullName());
-        ps.setDate(6, (Date) a.getBirthday());
-        ps.setInt(7, a.getGender());
-        ps.setString(8, a.getPhone());
-        ps.setString(9, a.getEmail());
-        ps.setString(10, a.getAddress());
-        ps.setInt(11, a.getStatus());
-        ps.setDate(12, (Date) a.getLastLogin());
-        ps.setInt(13, a.getAlowLogin());
-        ps.setString(14, a.getAccountId());
+        ps.setString(1, a.getUserName());
+        ps.setString(1, a.getPassWord());
+        ps.setDate(1, (Date) a.getDateCreate());
+        ps.setString(1, a.getFullName());
+        ps.setDate(1, (Date) a.getBirthday());
+        ps.setInt(1, a.getGender());
+        ps.setString(1, a.getPhone());
+        ps.setString(1, a.getEmail());
+        ps.setString(1, a.getAddress());
+        ps.setInt(1, a.getStatus());
+        ps.setDate(1, (Date) a.getLastLogin());
+        ps.setInt(1, a.getAlowLogin());
+        ps.setString(1, a.getAccountId());
         if(ps.executeUpdate()>0)
         {
             return true;
@@ -111,6 +111,7 @@ public class ManagementAccount {
             ex.printStackTrace();
             return false;
         }
+
     }
     public String getRoleByUserName(Account a)
     {
@@ -126,5 +127,59 @@ public class ManagementAccount {
         }
             return null;
 
+    }
+    public int getStaffIdByUserName(Account a)
+    {
+        try {
+            PreparedStatement ps = conn.prepareStatement("select StaffId from Staff,Account where Staff.AccountId=Account.AccountId and Account.UserName like ?");
+            ps.setString(1,a.getUserName());
+            ResultSet rs=ps.executeQuery();
+            while(rs.next())
+            {
+                return rs.getInt(1);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ManagementAccount.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return -1;
+    }
+    public int getStudentIdByUserName(Account a)
+    {
+        try {
+            PreparedStatement ps = conn.prepareStatement("select StudentId from Student,Account where Student.AccountId=Account.AccountId and Account.UserName like ?");
+            ps.setString(1,a.getUserName());
+            ResultSet rs=ps.executeQuery();
+            while(rs.next())
+            {
+                return rs.getInt(1);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ManagementAccount.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return -1;
+    }
+    private int studentId;
+    public int getBatchIdByStudentId()
+    {
+        try {
+            PreparedStatement ps = conn.prepareStatement("select BatchId from Student where StudentId = ? ");
+            ps.setInt(1,studentId);
+            ResultSet rs=ps.executeQuery();
+            while(rs.next())
+            {
+                return rs.getInt(1);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ManagementAccount.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return -1;
+    }
+
+    public int getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(int studentId) {
+        this.studentId = studentId;
     }
 }

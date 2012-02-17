@@ -1,10 +1,13 @@
 create database SupportiveLearning
 go
-use master
-drop database SupportiveLearning
+--use master
+--drop database SupportiveLearning
 use SupportiveLearning
 go
+<<<<<<< .mine
+=======
 
+>>>>>>> .r57
 create table Roles
 (
 	RoleId nvarchar(100) primary key,
@@ -12,14 +15,15 @@ create table Roles
 	Description nvarchar(max)
 )
 go
-insert into Roles values('R1','Administrator','Root roles')
+insert into Roles values('R1','Administrator','Root role')
+insert into Roles values('R2','Staff','Employee role')
+insert into Roles values('R3','Student','Student Role')
 go
-
 create table Account
 (
 	AccountId nvarchar(100) primary key,
 	RoleId nvarchar(100) foreign key references Roles(RoleId),
-	UserName nvarchar(100),
+	UserName nvarchar(100) unique,
 	PassWord nvarchar(100),
 	DateCreate datetime,
 	FullName nvarchar(100),
@@ -34,27 +38,18 @@ create table Account
 )
 go
 insert into Account values('A001','R1','admin','admin','1-1-1991','Vang Nguyen','1-1-1991',1,13123,'sdfaf','qwrqr',0,'1-1-1991',0)
-go
+insert into Account values('A002','R2','staff','staff','1-1-1991','Vang Nguyen','1-1-1991',1,13123,'sdfaf','qwrqr',0,'1-1-1991',0)
 
+go
 create table Staff
 (
 	StaffId nvarchar(100) primary key,
 	AccountId nvarchar(100) foreign key references Account(AccountId)
 )
 go
-
-insert into Staff values('S01','A001')
-
-create table Admin
-(
-	AdminId nvarchar(100) primary key,
-	AccountId nvarchar(100) foreign key references Account(AccountId),
-)
+select * from Staff
+insert into Staff values('S02','A002')
 go
-
-insert into Admin values('A1','A001')
-go
-
 create table Course
 (
 	CourseId nvarchar(100) primary key,
@@ -65,27 +60,25 @@ create table Course
 go
 insert into Course values('C01','TestCourse','1991-1-1','1991-4-4')
 go
-
-create table Semester
-(
-	SemesterId nvarchar(100) primary key,
-	SemesterName nvarchar(max),
-	SemesterTime datetime
-)
-go
-insert into Semester values('S01','SemesterTest','1991-5-5')
-go
-
 create table Batch
 (
 	BatchId nvarchar(100) primary key,
-	BatchName nvarchar(max),
+	BatchName nvarchar(max),	
 	StartDate datetime,
 	CourseId nvarchar(100) foreign key references Course(CourseId),
-	SemesterId nvarchar(100) foreign key references Semester(SemesterId),
+	StaffId nvarchar(100) foreign key references Staff(StaffId)
+	
 )
 go
-insert into Batch values('B01','BatchTest','1991-6-6','C01','S01')
+insert into Batch values('B01','C0908I','1991-6-6','C01','S01')
+insert into Batch values('B02','T0908I','1991-6-6','C01','S01')
+insert into Batch values('B03','H0908I','1991-6-6','C01','S01')
+insert into Batch values('B04','K0908I','1991-6-6','C01','S01')
+
+insert into Batch values('B06','K0908I','1991-6-6','C01','S02')
+insert into Batch values('B07','K0908I','1991-6-6','C01','S02')
+insert into Batch values('B08','K0908I','1991-6-6','C01','S02')
+select * from staff
 go
 
 create table Student
@@ -98,31 +91,15 @@ create table Student
 go
 insert into Student values('ST01','A001','1','B01')
 go
-
 create table FeedBack
 (
 	FeedBackId nvarchar(100) primary key,
 	StudentId nvarchar(100) foreign key references Student(StudentId),
-	StaffId nvarchar(100) foreign key references Staff(StaffId),
 	FeedBackTitle nvarchar(100),
 	FeedBack nvarchar(max),
 	FeedBackDate datetime
 )
 go
-insert into FeedBack values('F01','ST01','S01','Test duoc chua','duoc roi','1991-2-2')
-go
-
-create table Answer
-(
-	AnswerId nvarchar(100) primary key,
-	FeedBackId nvarchar(100) foreign key references FeedBack(FeedBackId),
-	Answer nvarchar(max),
-	AnswerDate datetime
-)
-go
-insert into Answer values('AS01','F01','Toi Phai Lam gi','1991-2-2')
-go
-
 create table Subject
 (
 	SubjectId nvarchar(100) primary key,
@@ -130,18 +107,21 @@ create table Subject
 )
 go
 insert into Subject values('SJ01','Java')
-go
+insert into Subject values('SJ02','C++')
+insert into Subject values('SJ03','C#')
+insert into Subject values('SJ04','HDJ')
+insert into Subject values('SJ05','HKT')
 
+go
 create table Assignment
 (
 	AssignmentId nvarchar(100) primary key,
 	AssignmentName nvarchar(max),
 	AssignmentFile nvarchar(max),
-	Assignment nvarchar(max),
+	Descriptions nvarchar(max),
 	AssignmentStartDate datetime,	
 	AssignmentEndDate datetime,
 	SubjectId nvarchar(100) foreign key references Subject(SubjectId),
-	StaffId nvarchar(100) foreign key references Staff(StaffId),
 	BatchId nvarchar(100) foreign key references Batch(BatchId)
 )
 go
@@ -154,7 +134,7 @@ create table MarkAssignment
 	StudentId nvarchar(100) foreign key references Student(StudentId),
 	Assignment nvarchar(100) foreign key references Assignment(AssignmentId),
 	FileUpload nvarchar(max),
-	MarkAssignment int,
+	MarkAssignment float,
 	DateUpload datetime
 )
 go
@@ -166,6 +146,9 @@ create table News
 	Images nvarchar(100),
 	NewsDate datetime
 )
+<<<<<<< .mine
+select *  from subject
+select * from assignment=======
 go
 --drop table FAQ
 create table FAQ
@@ -197,4 +180,4 @@ go
 insert into StaffAndBatch values('SAB01','S01','B01')
 go
 
-select * from ChangeLeaning
+select * from ChangeLeaning>>>>>>> .r57

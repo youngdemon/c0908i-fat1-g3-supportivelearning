@@ -9,7 +9,13 @@ import Model.DBConnection;
 import Model.Entities.Admin.Subject;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.text.StyledEditorKit.ItalicAction;
 
 /**
  *
@@ -23,45 +29,110 @@ public class ManagementSubject
     {
         conn=DBConnection.getConnect();
     }
-    public boolean addNewSubject(Subject s) throws SQLException
+//    public boolean addNewSubject(Subject s) throws SQLException
+//    {
+//        PreparedStatement ps=conn.prepareStatement("insert into Subject values (?,?)");
+//        ps.setString(1, s.getSubjectId());
+//        ps.setString(1, s.getSubjectName());
+//        if(ps.executeUpdate()>0)
+//        {
+//            return true;
+//        }
+//        else
+//        {
+//        return false;
+//        }
+//    }
+//    public boolean updateSubject(Subject s) throws SQLException
+//    {
+//        PreparedStatement ps = conn.prepareStatement("update Subject set SubjectName = ? where SubjectId = ?");
+//        ps.setString(1, s.getSubjectName());
+//        ps.setString(2, s.getSubjectId());
+//        if(ps.executeUpdate()>0)
+//        {
+//            return true;
+//        }
+//        else
+//        {
+//            return false;
+//        }
+//    }
+//    public boolean deleteSubject(Subject s) throws SQLException
+//    {
+//        PreparedStatement ps = conn.prepareStatement("delete from Subject where SubjectId = ?");
+//        ps.setString(1, s.getSubjectId());
+//        if(ps.executeUpdate()>0)
+//        {
+//            return true;
+//        }
+//        else
+//        {
+//            return false;
+//        }
+//    }
+    
+    public Iterator getAllSubject()
     {
-        PreparedStatement ps=conn.prepareStatement("insert into Subject values (?,?)");
-        ps.setString(1, s.getSubjectId());
-        ps.setString(1, s.getSubjectName());
-        if(ps.executeUpdate()>0)
-        {
-            return true;
+        try {
+            PreparedStatement ps = conn.prepareStatement("select * from Subject ");
+            ResultSet rs=ps.executeQuery();
+            ArrayList arr=new ArrayList();
+            while(rs.next())
+            {
+                Subject s=new Subject();
+                s.setSubjectId(rs.getInt(1));
+                s.setSubjectName(rs.getString(2));
+                arr.add(s);
+            }
+            return arr.iterator();
+        } catch (SQLException ex) {
+            Logger.getLogger(ManagementSubject.class.getName()).log(Level.SEVERE, null, ex);
         }
-        else
-        {
-        return false;
-        }
+            return null;
     }
-    public boolean updateSubject(Subject s) throws SQLException
+    private int semesterId;
+    public Iterator getSubjectBySemesterId()
     {
-        PreparedStatement ps = conn.prepareStatement("update Subject set SubjectName = ? where SubjectId = ?");
-        ps.setString(1, s.getSubjectName());
-        ps.setString(2, s.getSubjectId());
-        if(ps.executeUpdate()>0)
-        {
-            return true;
+        try {
+            PreparedStatement ps = conn.prepareStatement("select * from Subject where semesterId =? ");
+            ps.setInt(1, semesterId);
+            ResultSet rs=ps.executeQuery();
+            ArrayList arr=new ArrayList();
+            while(rs.next())
+            {
+                Subject s=new Subject();
+                s.setSubjectId(rs.getInt(1));
+                s.setSubjectName(rs.getString(3));
+                arr.add(s);
+            }
+            return arr.iterator();
+        } catch (SQLException ex) {
+            Logger.getLogger(ManagementSubject.class.getName()).log(Level.SEVERE, null, ex);
         }
-        else
-        {
-            return false;
-        }
+            return null;
     }
-    public boolean deleteSubject(Subject s) throws SQLException
+
+    public int getSemesterId() {
+        return semesterId;
+    }
+
+    public void setSemesterId(int semesterId) {
+        this.semesterId = semesterId;
+    }
+    public String getSubjectNameById()
     {
-        PreparedStatement ps = conn.prepareStatement("delete from Subject where SubjectId = ?");
-        ps.setString(1, s.getSubjectId());
-        if(ps.executeUpdate()>0)
-        {
-            return true;
+        try {
+            PreparedStatement ps = conn.prepareStatement("select SubjectName from Subject where SubjectId = ?");
+            //ca'nt find subject id huhu
+            ps.setInt(1,semesterId);
+
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                return rs.getString(1);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ManagementSubject.class.getName()).log(Level.SEVERE, null, ex);
         }
-        else
-        {
-            return false;
-        }
+        return "Null";
     }
 }
