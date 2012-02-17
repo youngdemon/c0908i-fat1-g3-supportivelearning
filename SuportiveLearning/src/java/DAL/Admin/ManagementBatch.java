@@ -28,24 +28,23 @@ public class ManagementBatch {
         conn = DBConnection.getConnect();
     }
 
-//    public boolean addNewBatch(Batch b) throws SQLException
-//    {
-//        PreparedStatement ps = conn.prepareStatement("insert into Batch values(?,?,?,?,?)");
-//        ps.setString(1, b.getBatchId());
-//        ps.setString(1, b.getBatchName());
-//        ps.setDate(1, (Date) b.getStartDate());
-//        ps.setString(1, b.getCourseId());
-//        ps.setString(1, b.getSemesterId());
-//
-//        if(ps.executeUpdate()>0)
-//        {
-//            return true;
-//        }
-//        else
-//        {
-//            return false;
-//        }
-//    }
+    public boolean addNewBatch(Batch b) throws SQLException
+    {
+        PreparedStatement ps = conn.prepareStatement("insert into Batch values(?,?,?,?)");
+        ps.setString(1, b.getBatchName());
+        ps.setDate(2, b.getStartDate());
+        ps.setInt(3, b.getStaffId());
+        ps.setInt(4, b.getSemesterId());
+
+        if(ps.executeUpdate()>0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
 //    public boolean updateBatch(Batch b) throws SQLException
 //    {
@@ -145,4 +144,26 @@ public class ManagementBatch {
         this.batchId = batchId;
     }
 
+    public Iterator getAllBatch()
+    {
+        try {
+            PreparedStatement ps = conn.prepareStatement("select * from Batch");
+            ResultSet rs=ps.executeQuery();
+            ArrayList arr=new ArrayList();
+            while(rs.next())
+            {
+                Batch b=new Batch();
+                b.setBatchId(rs.getInt(1));
+                b.setBatchName(rs.getString(2));
+                b.setStartDate(rs.getDate(3));
+                b.setStaffId(rs.getInt(4));
+                b.setSemesterId(rs.getInt(5));
+                arr.add(b);
+            }
+            return arr.iterator();
+        } catch (SQLException ex) {
+            Logger.getLogger(ManagementCourse.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
 }

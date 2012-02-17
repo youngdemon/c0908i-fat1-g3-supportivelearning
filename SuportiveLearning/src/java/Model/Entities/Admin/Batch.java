@@ -20,6 +20,8 @@ public class Batch {
     private int batchId;
     private String batchName;
     private Date startDate;
+    private int staffId;
+    private int semesterId;
 
     public int getBatchId() {
         return batchId;
@@ -60,7 +62,6 @@ public class Batch {
     public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
-    private int staffId;
-    private int semesterId;
+
 
 }

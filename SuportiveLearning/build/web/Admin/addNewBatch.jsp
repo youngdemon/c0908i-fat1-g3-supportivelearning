@@ -5,49 +5,51 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-   "http://www.w3.org/TR/html4/loose.dtd">
-<%@taglib prefix="html" uri="http://struts.apache.org/tags-html" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<jsp:useBean id="objManegementSemester" class="DAL.Admin.ManagementSemester" />
+<jsp:useBean id="objManegementStaff" class="DAL.Admin.ManagementStaff" />
 <form action="addNewBatch.do" method="post">
     <table>
         <tr>
             <td>
-                BatchId
+                Batch Name
             </td>
             <td>
-                <html:text property="txtBatchId" value="" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                BatchName
-            </td>
-            <td>
-                <html:text property="txtBatchName" value="" />
+                <input type="text" name="txtBatchName"/>
             </td>
         </tr>
-        <tr>
+         <tr>
             <td>
-                StartDate
+                StaffId
             </td>
             <td>
-                <html:text property="txtStartDate" value="" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                CourseId
-            </td>
-            <td>
-                <html:text property="txtCourseId" value="" />
+                <select name="txtStaffId">
+                    <option selected="true">---Select---</option>
+                    <c:forEach var="item" items="${objManegementStaff.allStaff}">
+                        <option value="${item.staffId}">${item.staffId}</option>
+                    </c:forEach>
+                </select>
             </td>
         </tr>
-        <tr>
+         <tr>
             <td>
-                SemesterId
+                Start Date
             </td>
             <td>
-                <html:text property="txtSemesterId" value="" />
+                <input type="text" name="txtStartDate" id="datepicker" />
+            </td>
+        </tr>
+         <tr>
+            <td>
+                Semester Name
+            </td>
+            <td>
+                <select name="txtsemesterId">
+                    <option selected="true">---Select---</option>
+                    <c:forEach var="item" items="${objManegementSemester.allSemester}">
+                        <option value="${item.semesterId}">${item.semesterName}</option>
+                    </c:forEach>
+                </select>
             </td>
         </tr>
         <tr>

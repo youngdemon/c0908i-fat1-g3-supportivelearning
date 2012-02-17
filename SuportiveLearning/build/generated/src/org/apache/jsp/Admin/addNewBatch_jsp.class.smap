@@ -1,0 +1,20 @@
+SMAP
+addNewBatch_jsp.java
+JSP
+*S JSP
+*F
++ 0 addNewBatch.jsp
+Admin/addNewBatch.jsp
+*L
+5,5:55
+9,2:59,9
+11,18:77
+28:148,11
+29:159,6
+30:165
+30,20:97
+49:190,11
+50:201,6
+51:207
+51,12:119
+*E
