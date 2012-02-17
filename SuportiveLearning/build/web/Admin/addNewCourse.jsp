@@ -5,33 +5,22 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-   "http://www.w3.org/TR/html4/loose.dtd">
-<%@taglib prefix="html" uri="http://struts.apache.org/tags-html" %>
 <form action="addNewCourse.do" method="post">
     <table>
         <tr>
             <td>
-                CourseId
+                Course Name
             </td>
             <td>
-                <html:text property="txtCourseId" value="" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                CourseName
-            </td>
-            <td>
-                <html:text property="txtCourseName" value="" />
+                <input type="text" name="txtCourseName"/>
             </td>
         </tr>
          <tr>
             <td>
-                DateStart
+                Date Start
             </td>
             <td>
-                <html:text property="txtDateStart" value="" />
+                <input type="text" name="txtDateStart" id="datepicker" />
             </td>
         </tr>
          <tr>
@@ -39,7 +28,7 @@
                 DateEnd
             </td>
             <td>
-                <html:text property="txtDateEnd" value="" />
+                <input type="text" name="txtDateEnd" id="datepicker2" />
             </td>
         </tr>
         <tr>
