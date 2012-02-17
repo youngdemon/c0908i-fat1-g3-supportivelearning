@@ -112,6 +112,18 @@
                     <c:if test="${requestScope.action=='listCourse'}">
                         <jsp:include page="Admin/listCourse.jsp"/>
                     </c:if>
+                    <c:if test="${requestScope.action=='listSemester'}">
+                        <jsp:include page="Admin/listSemester.jsp"/>
+                    </c:if>
+                    <c:if test="${requestScope.action=='listBatchAdmin'}">
+                        <jsp:include page="Admin/listBatch.jsp"/>
+                    </c:if>
+                    <c:if test="${requestScope.action=='addBatch'}">
+                        <jsp:include page="Admin/addNewBatch.jsp"/>
+                    </c:if>
+                    <c:if test="${requestScope.action=='addSemester'}">
+                        <jsp:include page="Admin/addNewSemester.jsp"/>
+                    </c:if>
                     <c:if test="${requestScope.action=='addCourse'}">
                         <jsp:include page="Admin/addNewCourse.jsp"/>
                     </c:if>

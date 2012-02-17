@@ -28,8 +28,8 @@
             <li><a href="ManagementStaffRedirect.do">Management Staff</a></li>
             <li><a href="ManagementStudentRedirect.do">Management Student</a></li>
             <li><a href="ListCourse.do">Management Course</a></li>
-            <li><a href="ManagementSemsterRedirect.do">Management Semester</a></li>
-            <li><a href="ManagementBatchRedirect.do">Management Batch</a></li>
+            <li><a href="ListSemester.do">Management Semester</a></li>
+            <li><a href="ListBatch.do">Management Batch</a></li>
             <li><a href="ManagementSubjectRedirect.do">Management Subject</a></li>
             <li><a href="ManagementFAQSRedirect.do">Management FAQs</a></li>
             <li><a href="ManagementNewsRedirect.do">Management News</a></li>

@@ -9,7 +9,12 @@ import Model.DBConnection;
 import Model.Entities.Admin.Staff;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -67,4 +72,25 @@ public class ManagementStaff {
 //            return false;
 //        }
 //    }
+
+    public Iterator getAllStaff()
+    {
+        try {
+            PreparedStatement ps = conn.prepareStatement("select * from Staff");
+            ResultSet rs=ps.executeQuery();
+            ArrayList arr=new ArrayList();
+            while(rs.next())
+            {
+                Staff c=new Staff();
+                c.setStaffId(rs.getInt(1));
+                c.setAccountId(rs.getString(2));
+                arr.add(c);
+            }
+            return arr.iterator();
+        } catch (SQLException ex) {
+            Logger.getLogger(ManagementCourse.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+
+    }
 }

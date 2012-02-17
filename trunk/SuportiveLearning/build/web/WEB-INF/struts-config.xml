@@ -7,6 +7,8 @@
 
 <struts-config>
     <form-beans>
+        <form-bean name="BatchActionForm" type="Bussiness.Admin.BatchActionForm"/>
+        <form-bean name="SemesterActionForm" type="Bussiness.Admin.SemesterActionForm"/>
         <form-bean name="ChangeFileActionForm" type="Bussiness.Student.Redirect.ChangeFileActionForm"/>
         <form-bean name="MarkAssignmentActionForm" type="Bussiness.Staff.MarkAssignmentActionForm"/>
         <form-bean name="AssignmentActionForm" type="Bussiness.Staff.AssignmentActionForm"/>
@@ -45,6 +47,12 @@
         <action path="/AddNewAssignmentRedirect" type="Bussiness.Staff.Redirect.AddNewAssignment_RedirectAction">
             <forward name="successAdding" path="/ListAssigment_Redirect.do"/>
         </action>
+        <action path="/addBatch_Redirect" type="Bussiness.Admin.Redirect.addBatch_RedirectAction"/>
+        <action path="/ListBatch" type="Bussiness.Admin.Redirect.ListBatchAction"/>
+        <action input="/Admin/addNewBatch.jsp" name="BatchActionForm" path="/addNewBatch" scope="session" type="Bussiness.Admin.BatchAction" validate="false"/>
+        <action path="/addSemester_Redirect" type="Bussiness.Admin.Redirect.addSemester_RedirectAction"/>
+        <action path="/ListSemester" type="Bussiness.Admin.Redirect.ListSemesterAction"/>
+        <action input="/Admin/addNewSemester.jsp" name="SemesterActionForm" path="/addNewSemester" scope="session" type="Bussiness.Admin.SemesterAction" validate="false"/>
         <action path="/addCourse_Redirect" type="Bussiness.Admin.Redirect.addCourse_RedirectAction"/>
         <action path="/ListCourse" type="Bussiness.Admin.Redirect.ListCourseAction"/>
         <action input="/Staff/updateMark.jsp" name="MarkAssignmentActionForm" path="/updateMark" scope="session" type="Bussiness.Staff.updateMarkAssignmentAction" validate="false"/>
