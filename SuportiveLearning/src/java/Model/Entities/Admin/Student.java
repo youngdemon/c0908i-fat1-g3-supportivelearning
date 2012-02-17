@@ -16,40 +16,31 @@ public class Student {
 
     }
 
-    private String StudentId;
-    private String AccountId;
-    private String RollNumber;
-    private String BatchId;
+    private int studentId;
 
     public String getAccountId() {
-        return AccountId;
+        return accountId;
     }
 
-    public void setAccountId(String AccountId) {
-        this.AccountId = AccountId;
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
     }
 
     public String getBatchId() {
-        return BatchId;
+        return batchId;
     }
 
-    public void setBatchId(String BatchId) {
-        this.BatchId = BatchId;
+    public void setBatchId(String batchId) {
+        this.batchId = batchId;
     }
 
-    public String getRollNumber() {
-        return RollNumber;
+    public int getStudentId() {
+        return studentId;
     }
 
-    public void setRollNumber(String RollNumber) {
-        this.RollNumber = RollNumber;
+    public void setStudentId(int studentId) {
+        this.studentId = studentId;
     }
-
-    public String getStudentId() {
-        return StudentId;
-    }
-
-    public void setStudentId(String StudentId) {
-        this.StudentId = StudentId;
-    }
+    private String accountId;
+    private String batchId;
 }

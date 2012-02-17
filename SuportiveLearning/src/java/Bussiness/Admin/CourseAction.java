@@ -6,7 +6,6 @@
 package Bussiness.Admin;
 
 import DAL.Admin.ManagementCourse;
-import Model.DBConnection;
 import Model.Entities.Admin.Course;
 import java.sql.Date;
 import javax.servlet.http.HttpServletRequest;
@@ -37,16 +36,16 @@ public class CourseAction extends org.apache.struts.action.Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        CourseActionForm f= (CourseActionForm) form;
-        ManagementCourse MC=new ManagementCourse();
-        Course s=new Course();
-        s.setCourseId(f.getTxtCourseId());
-        s.setCourseName(f.getTxtCourseName());
-        s.setDateStart(DBConnection.convertStringToDate(f.getTxtDateStart()));
-        s.setDateEnd(DBConnection.convertStringToDate(f.getTxtDateEnd()));
-        System.out.println(s.getCourseId());
-        MC.addNewCourse(s);
-
+//        CourseActionForm f= (CourseActionForm) form;
+//        ManagementCourse MC=new ManagementCourse();
+//        Course s=new Course();
+//        s.setCourseId(f.getCourseId());
+//        s.setCourseName(f.getCourseName());
+//        s.setDateStart(Date.valueOf(f.getDateStart()));
+//        s.setDateEnd(Date.valueOf(f.getDateEnd()));
+//        System.out.println(s.getCourseId());
+//        MC.addNewCourse(s);
+//
         return mapping.findForward("success");
     }
 }

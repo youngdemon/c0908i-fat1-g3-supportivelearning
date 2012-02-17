@@ -5,7 +5,7 @@
 
 package Model.Entities.Admin;
 
-import java.sql.Date;
+import java.util.Date;
 
 /**
  *
@@ -18,40 +18,41 @@ public class Course {
 
     }
     
-    private String CourseId;
-    private String CourseName;
-    private Date DateStart;
-    private Date DateEnd;
+    private int courseId;
+    private String courseName;
+    private Date dateStart;
+    private Date dateEnd;
 
-    public String getCourseId() {
-        return CourseId;
+    public int getCourseId() {
+        return courseId;
     }
 
-    public void setCourseId(String CourseId) {
-        this.CourseId = CourseId;
+    public void setCourseId(int courseId) {
+        this.courseId = courseId;
     }
 
     public String getCourseName() {
-        return CourseName;
+        return courseName;
     }
 
-    public void setCourseName(String CourseName) {
-        this.CourseName = CourseName;
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
     }
 
     public Date getDateEnd() {
-        return DateEnd;
+        return dateEnd;
     }
 
-    public void setDateEnd(Date DateEnd) {
-        this.DateEnd = DateEnd;
+    public void setDateEnd(Date dateEnd) {
+        this.dateEnd = dateEnd;
     }
 
     public Date getDateStart() {
-        return DateStart;
+        return dateStart;
     }
 
-    public void setDateStart(Date DateStart) {
-        this.DateStart = DateStart;
+    public void setDateStart(Date dateStart) {
+        this.dateStart = dateStart;
     }
+
 }

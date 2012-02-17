@@ -36,13 +36,13 @@ public class StaffAction extends org.apache.struts.action.Action {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
 
-        StaffActionForm sa=(StaffActionForm) form;
-        ManagementStaff ms = new ManagementStaff();
-        Staff s = new Staff();
-        s.setStaffId(sa.getTxtStaffId());
-        s.setAccountId(sa.getTxtAccountId());
-        System.out.println(s.getStaffId());
-        ms.addNewStaff(s);
+//        StaffActionForm sa=(StaffActionForm) form;
+//        ManagementStaff ms = new ManagementStaff();
+//        Staff s = new Staff();
+//        s.setStaffId(sa.getTxtStaffId());
+//        s.setAccountId(sa.getTxtAccountId());
+//        System.out.println(s.getStaffId());
+//        ms.addNewStaff(s);
         
         
         return mapping.findForward("success");

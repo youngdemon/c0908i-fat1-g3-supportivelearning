@@ -18,16 +18,16 @@
         <td>
             Username :
         </td>
-        <td><html:text property="txtUserName" value="" size="10" /></td>
+        <td><input type="text" name="txtUserName" value="" size="10" /></td>
     </tr>
     <tr>
         <td>
-            Password :
+            Password :dfdfd
         </td>
-        <td><html:text property="txtPassword" value="" size="10" /></td>
+        <td><input type="password" name="txtPassword" value="" size="10" /></td>
     </tr>
     <tr>
-        <td><html:submit value="Login"/></td>
+        <td><input type="submit" value="Login" /></td>
     </tr>
 </table>
 </form>
@@ -42,7 +42,7 @@
         </tr>
         <tr>
             <td>
-                <a href="#">Logout</a>
+                <a href="Logout.do">Logout</a>
             </td>
         </tr>
     </table>

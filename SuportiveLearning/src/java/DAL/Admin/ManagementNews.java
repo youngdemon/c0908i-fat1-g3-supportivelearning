@@ -22,56 +22,56 @@ public class ManagementNews {
     {
         conn=DBConnection.getConnect();
     }
-
-    public boolean addNewNews(News n) throws SQLException
-    {
-        PreparedStatement ps = conn.prepareStatement("insert into News values (?,?,?,?,?)");
-        ps.setString(1, n.getNewsId());
-        ps.setString(1, n.getTitle());
-        ps.setString(1, n.getNews());
-        ps.setString(1, n.getImages());
-        ps.setDate(1, (java.sql.Date) n.getNewsDate());
-        if(ps.executeUpdate()>0)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-
-    }
-    public boolean updateNews(News n) throws SQLException
-    {
-        PreparedStatement ps = conn.prepareStatement("update News set Title=?, News=?, Images=?, NewsDate=? where NewsId=?");
-        ps.setString(1, n.getTitle());
-        ps.setString(1, n.getNews());
-        ps.setString(1, n.getImages());
-        ps.setDate(1, (Date) n.getNewsDate());
-        ps.setString(1, n.getNewsId());
-        if(ps.executeUpdate()>0)
-        {
-            return true;
-        }
-        else
-        {
-            return true;
-        }
-    }
-    public boolean deleteNews(News n) throws SQLException
-    {
-
-        PreparedStatement ps = conn.prepareStatement("delete from News where NewsId = ?");
-        ps.setString(1, n.getNewsId());
-        if(ps.executeUpdate()>0)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
+//
+//    public boolean addNewNews(News n) throws SQLException
+//    {
+//        PreparedStatement ps = conn.prepareStatement("insert into News values (?,?,?,?,?)");
+//        ps.setString(1, n.getNewsId());
+//        ps.setString(1, n.getTitle());
+//        ps.setString(1, n.getNews());
+//        ps.setString(1, n.getImages());
+//        ps.setDate(1, (java.sql.Date) n.getNewsDate());
+//        if(ps.executeUpdate()>0)
+//        {
+//            return true;
+//        }
+//        else
+//        {
+//            return false;
+//        }
+//
+//    }
+//    public boolean updateNews(News n) throws SQLException
+//    {
+//        PreparedStatement ps = conn.prepareStatement("update News set Title=?, News=?, Images=?, NewsDate=? where NewsId=?");
+//        ps.setString(1, n.getTitle());
+//        ps.setString(1, n.getNews());
+//        ps.setString(1, n.getImages());
+//        ps.setDate(1, (Date) n.getNewsDate());
+//        ps.setString(1, n.getNewsId());
+//        if(ps.executeUpdate()>0)
+//        {
+//            return true;
+//        }
+//        else
+//        {
+//            return true;
+//        }
+//    }
+//    public boolean deleteNews(News n) throws SQLException
+//    {
+//
+//        PreparedStatement ps = conn.prepareStatement("delete from News where NewsId = ?");
+//        ps.setString(1, n.getNewsId());
+//        if(ps.executeUpdate()>0)
+//        {
+//            return true;
+//        }
+//        else
+//        {
+//            return false;
+//        }
+//    }
+//
 
 }

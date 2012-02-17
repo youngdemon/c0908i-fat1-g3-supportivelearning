@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+
+<struts-config>
+    <form-beans>
+<<<<<<< .mine
+        <form-bean name="CourseActionForm" type="Bussiness.Admin.CourseActionForm"/>
+=======
+
+        <form-bean name="StaffActionForm" type="Bussiness.Admin.StaffActionForm"/>
+
+>>>>>>> .r46
+        <form-bean name="FAQActionForm" type="Bussiness.Admin.FAQActionForm"/>
+
+        <form-bean name="SubjectActionForm" type="Bussiness.Admin.SubjectActionForm"/>
+        <form-bean name="StudentActionForm" type="Bussiness.Admin.StudentActionForm"/>
+
+        <form-bean name="StaffAndBatchActionForm" type="Bussiness.Admin.StaffAndBatchActionForm"/>
+        <form-bean name="SemesterActionForm" type="Bussiness.Admin.SemesterActionForm"/>
+    
+    </form-beans>
+    
+    <global-exceptions>
+    
+    </global-exceptions>
+
+    <global-forwards>
+        <forward name="welcome"  path="/Welcome.do"/>
+    </global-forwards>
+
+    <action-mappings>
+        <action input="/Admin/addNewSemester.jsp" name="SemesterActionForm" path="/addNewSemester" scope="session" type="Bussiness.Admin.SemesterAction" validate="false">
+            <forward name="success" path="/welcomeStruts.jsp"/>
+        </action>
+        <action input="/Admin/addNewStaffAndBatch.jsp" name="StaffAndBatchActionForm" path="/addNewStaffAndBatch" scope="session" type="Bussiness.Admin.StaffAndBatchAction" validate="false">
+            <forward name="success" path="/welcomeStruts.jsp"/>
+        </action>
+
+        <action input="/Admin/addNewStaff.jsp" name="StaffActionForm" path="/addNewStaff" scope="session" type="Bussiness.Admin.StaffAction" validate="false">
+            <forward name="success" path="/welcomeStruts.jsp"/>
+        </action>
+
+        <action input="/Admin/addNewStudent.jsp" name="StudentActionForm" path="/addNewStudent" scope="session" type="Bussiness.Admin.StudentAction">
+            <forward name="success" path="/welcomeStruts.jsp"/>
+        </action>
+        <action input="/Admin/addNewSubject.jsp" name="SubjectActionForm" path="/addNewSubject" scope="session" type="Bussiness.Admin.SubjectAction">
+            <forward name="success" path="/welcomeStruts.jsp"/>
+        </action>
+
+        <action input="/Admin/addNewFAQ.jsp" name="FAQActionForm" path="/addNewFAQ" scope="session" type="Bussiness.Admin.FAQAction" validate="false">
+            <forward name="success" path="/welcomeStruts.jsp"/>
+        </action>
+<<<<<<< .mine
+        <action input="/Admin/addNewCourse.jsp" name="CourseActionForm" path="/addNewCourse" scope="session" type="Bussiness.Admin.CourseAction" validate="false">
+            <forward name="success" path="/welcomeStruts.jsp"/>
+        </action>
+=======
+
+>>>>>>> .r46
+    </action-mappings>
+    
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+
+    <message-resources parameter="com/myapp/struts/ApplicationResource"/>    
+    
+    <!-- ========================= Tiles plugin ===============================-->
+    <!--
+    This plugin initialize Tiles definition factory. This later can takes some
+    parameters explained here after. The plugin first read parameters from
+    web.xml, thenoverload them with parameters defined here. All parameters
+    are optional.
+    The plugin should be declared in each struts-config file.
+    - definitions-config: (optional)
+    Specify configuration file names. There can be several comma
+    separated file names (default: ?? )
+    - moduleAware: (optional - struts1.1)
+    Specify if the Tiles definition factory is module aware. If true
+    (default), there will be one factory for each Struts module.
+    If false, there will be one common factory for all module. In this
+    later case, it is still needed to declare one plugin per module.
+    The factory will be initialized with parameters found in the first
+    initialized plugin (generally the one associated with the default
+    module).
+    true : One factory per module. (default)
+    false : one single shared factory for all modules
+    - definitions-parser-validate: (optional)
+    Specify if xml parser should validate the Tiles configuration file.
+    true : validate. DTD should be specified in file header (default)
+    false : no validation
+
+    Paths found in Tiles definitions are relative to the main context.
+    -->
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+    
+    <!-- ========================= Validator plugin ================================= -->
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
+  
+</struts-config>

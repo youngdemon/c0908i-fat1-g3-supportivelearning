@@ -5,44 +5,41 @@
 
 package Model.Entities.Admin;
 
-import java.sql.Date;
-
 /**
  *
  * @author Administrator
  */
 public class Semester {
 
-    public Semester()
-    {
-
+    public Semester() {
     }
 
-    private String SemesterId;
-    private String SemesterName;
-    private Date SemesterTime;
+    private int semesterId;
+    private int courseId;
+    private String semesterName;
 
-    public String getSemesterId() {
-        return SemesterId;
+    public int getCourseId() {
+        return courseId;
     }
 
-    public void setSemesterId(String SemesterId) {
-        this.SemesterId = SemesterId;
+    public void setCourseId(int courseId) {
+        this.courseId = courseId;
+    }
+
+    public int getSemesterId() {
+        return semesterId;
+    }
+
+    public void setSemesterId(int semesterId) {
+        this.semesterId = semesterId;
     }
 
     public String getSemesterName() {
-        return SemesterName;
+        return semesterName;
     }
 
-    public void setSemesterName(String SemesterName) {
-        this.SemesterName = SemesterName;
+    public void setSemesterName(String semesterName) {
+        this.semesterName = semesterName;
     }
 
-    public Date getSemesterTime() {
-        return SemesterTime;
-    }
-
-    public void setSemesterTime(Date SemesterTime) {
-        this.SemesterTime = SemesterTime;
-    }
 }
