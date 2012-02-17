@@ -115,7 +115,7 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
         return;
       out.write("\n");
       out.write("                     ");
-      if (_jspx_meth_c_if_22(_jspx_page_context))
+      if (_jspx_meth_c_if_23(_jspx_page_context))
         return;
       out.write("\n");
       out.write("            </div>\n");
@@ -252,6 +252,10 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
         out.write("\n");
         out.write("                    ");
         if (_jspx_meth_c_if_21((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_if_0, _jspx_page_context))
+          return true;
+        out.write("\n");
+        out.write("                    ");
+        if (_jspx_meth_c_if_22((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_if_0, _jspx_page_context))
           return true;
         out.write("\n");
         out.write("                ");
@@ -886,13 +890,13 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_20 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
     _jspx_th_c_if_20.setPageContext(_jspx_page_context);
     _jspx_th_c_if_20.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_if_0);
-    _jspx_th_c_if_20.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${requestScope.action=='addSemester'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    _jspx_th_c_if_20.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${requestScope.action=='updateBatch'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
     int _jspx_eval_c_if_20 = _jspx_th_c_if_20.doStartTag();
     if (_jspx_eval_c_if_20 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\n");
         out.write("                        ");
-        org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "Admin/addNewSemester.jsp", out, false);
+        org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "Admin/updateBatch.jsp", out, false);
         out.write("\n");
         out.write("                    ");
         int evalDoAfterBody = _jspx_th_c_if_20.doAfterBody();
@@ -918,13 +922,13 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_21 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
     _jspx_th_c_if_21.setPageContext(_jspx_page_context);
     _jspx_th_c_if_21.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_if_0);
-    _jspx_th_c_if_21.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${requestScope.action=='addCourse'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    _jspx_th_c_if_21.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${requestScope.action=='addSemester'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
     int _jspx_eval_c_if_21 = _jspx_th_c_if_21.doStartTag();
     if (_jspx_eval_c_if_21 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\n");
         out.write("                        ");
-        org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "Admin/addNewCourse.jsp", out, false);
+        org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "Admin/addNewSemester.jsp", out, false);
         out.write("\n");
         out.write("                    ");
         int evalDoAfterBody = _jspx_th_c_if_21.doAfterBody();
@@ -940,7 +944,7 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
-  private boolean _jspx_meth_c_if_22(PageContext _jspx_page_context)
+  private boolean _jspx_meth_c_if_22(javax.servlet.jsp.tagext.JspTag _jspx_th_c_if_0, PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
@@ -949,14 +953,14 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
     //  c:if
     org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_22 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
     _jspx_th_c_if_22.setPageContext(_jspx_page_context);
-    _jspx_th_c_if_22.setParent(null);
-    _jspx_th_c_if_22.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${requestScope.mess=='addSuccess'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    _jspx_th_c_if_22.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_if_0);
+    _jspx_th_c_if_22.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${requestScope.action=='addCourse'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
     int _jspx_eval_c_if_22 = _jspx_th_c_if_22.doStartTag();
     if (_jspx_eval_c_if_22 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       do {
         out.write("\n");
         out.write("                        ");
-        org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "Admin/addSuccess.jsp", out, false);
+        org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "Admin/addNewCourse.jsp", out, false);
         out.write("\n");
         out.write("                    ");
         int evalDoAfterBody = _jspx_th_c_if_22.doAfterBody();
@@ -969,6 +973,38 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
       return true;
     }
     _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_22);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_if_23(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    HttpServletRequest request = (HttpServletRequest)_jspx_page_context.getRequest();
+    HttpServletResponse response = (HttpServletResponse)_jspx_page_context.getResponse();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_23 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_23.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_23.setParent(null);
+    _jspx_th_c_if_23.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${requestScope.mess=='addSuccess'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_23 = _jspx_th_c_if_23.doStartTag();
+    if (_jspx_eval_c_if_23 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\n");
+        out.write("                        ");
+        org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "Admin/addSuccess.jsp", out, false);
+        out.write("\n");
+        out.write("                    ");
+        int evalDoAfterBody = _jspx_th_c_if_23.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_if_23.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_23);
+      return true;
+    }
+    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_23);
     return false;
   }
 }

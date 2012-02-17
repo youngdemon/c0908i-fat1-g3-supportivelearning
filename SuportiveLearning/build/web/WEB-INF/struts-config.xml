@@ -47,6 +47,8 @@
         <action path="/AddNewAssignmentRedirect" type="Bussiness.Staff.Redirect.AddNewAssignment_RedirectAction">
             <forward name="successAdding" path="/ListAssigment_Redirect.do"/>
         </action>
+        <action input="/Admin/updateBatch.jsp" name="BatchActionForm" path="/updateBatch" scope="session" type="Bussiness.Admin.updateBatchAction" validate="false"/>
+        <action path="/updateBatch_Redirect" type="Bussiness.Admin.Redirect.updateBatch_RedirectAction"/>
         <action path="/addBatch_Redirect" type="Bussiness.Admin.Redirect.addBatch_RedirectAction"/>
         <action path="/ListBatch" type="Bussiness.Admin.Redirect.ListBatchAction"/>
         <action input="/Admin/addNewBatch.jsp" name="BatchActionForm" path="/addNewBatch" scope="session" type="Bussiness.Admin.BatchAction" validate="false"/>
