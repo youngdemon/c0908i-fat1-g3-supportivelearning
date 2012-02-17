@@ -6,7 +6,6 @@
 package Bussiness.Admin;
 
 
-import DAL.Admin.ManagementSemester;
 import Model.DBConnection;
 import Model.Entities.Admin.Semester;
 import java.sql.Date;
@@ -53,13 +52,13 @@ public class BatchAction extends org.apache.struts.action.Action {
         BatchActionForm bf= (BatchActionForm) form;
         ManagementBatch MB = new ManagementBatch();
         Batch s = new Batch();
-        s.setBatchId(bf.getTxtBatchId());
-        s.setBatchName(bf.getTxtBatchName());
-        s.setStartDate(DBConnection.convertStringToDate(bf.getTxtStartDate()));
-        s.setCourseId(bf.getTxtCourseId());
-        s.setSemesterId(bf.getTxtSemesterId());
-        System.out.println(s.getBatchId());
-        MB.addNewBatch(s);
+//        s.setBatchId(bf.getTxtBatchId());
+//        s.setBatchName(bf.getTxtBatchName());
+//        s.setStartDate(DBConnection.convertStringToDate(bf.getTxtStartDate()));
+//        s.setCourseId(bf.getTxtCourseId());
+//        s.setSemesterId(bf.getTxtSemesterId());
+//        System.out.println(s.getBatchId());
+//        MB.addNewBatch(s);
         
 
 
