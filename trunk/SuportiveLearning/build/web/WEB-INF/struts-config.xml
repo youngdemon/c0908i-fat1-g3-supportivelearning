@@ -45,6 +45,8 @@
         <action path="/AddNewAssignmentRedirect" type="Bussiness.Staff.Redirect.AddNewAssignment_RedirectAction">
             <forward name="successAdding" path="/ListAssigment_Redirect.do"/>
         </action>
+        <action path="/addCourse_Redirect" type="Bussiness.Admin.Redirect.addCourse_RedirectAction"/>
+        <action path="/ListCourse" type="Bussiness.Admin.Redirect.ListCourseAction"/>
         <action input="/Staff/updateMark.jsp" name="MarkAssignmentActionForm" path="/updateMark" scope="session" type="Bussiness.Staff.updateMarkAssignmentAction" validate="false"/>
         <action path="/updateMarkAssignment" type="Bussiness.Staff.Redirect.updateMarkAssignmentAction"/>
         <action path="/ListAssignmentMarkAssignment" type="Bussiness.Staff.Redirect.ListAssignmentMarkAssignmentAction"/>

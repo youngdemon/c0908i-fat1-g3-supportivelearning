@@ -22,7 +22,7 @@
     </tr>
     <tr>
         <td>
-            Password :dfdfd
+            Password :
         </td>
         <td><input type="password" name="txtPassword" value="" size="10" /></td>
     </tr>

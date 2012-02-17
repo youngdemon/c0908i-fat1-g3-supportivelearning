@@ -10,7 +10,12 @@ import Model.Entities.Admin.Course;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -22,22 +27,21 @@ public class ManagementCourse {
     {
         conn= DBConnection.getConnect();
     }
-//    public boolean addNewCourse(Course c) throws SQLException
-//    {
-//        PreparedStatement ps=conn.prepareStatement("insert into Course values (?,?,?,?)");
-//        ps.setString(1, c.getCourseId());
-//        ps.setString(2, c.getCourseName());
-//        ps.setDate(3, (Date) c.getDateStart());
-//        ps.setDate(4, (Date) c.getDateEnd());
-//        if(ps.executeUpdate()>0)
-//        {
-//            return true;
-//        }
-//        else
-//        {
-//        return false;
-//        }
-//    }
+    public boolean addNewCourse(Course c) throws SQLException
+    {
+        PreparedStatement ps=conn.prepareStatement("insert into Course values (?,?,?)");
+        ps.setString(1, c.getCourseName());
+        ps.setDate(2,c.getDateStart());
+        ps.setDate(3,c.getDateEnd());
+        if(ps.executeUpdate()>0)
+        {
+            return true;
+        }
+        else
+        {
+        return false;
+        }
+    }
 //    public boolean updateCourse(Course c) throws SQLException
 //    {
 //        PreparedStatement ps = conn.prepareStatement("update Course set CourseName = ?, DateStart = ?, DateEnd = ? where CourseId = ?");
@@ -68,4 +72,27 @@ public class ManagementCourse {
 //        }
 //    }
 
+    //display table course
+    public Iterator getAllCourse()
+    {
+        try {
+            PreparedStatement ps = conn.prepareStatement("select * from Course");
+            ResultSet rs=ps.executeQuery();
+            ArrayList arr=new ArrayList();
+            while(rs.next())
+            {
+                Course c=new Course();
+                c.setCourseId(rs.getInt(1));
+                c.setCourseName(rs.getString(2));
+                c.setDateStart(rs.getDate(3));
+                c.setDateEnd(rs.getDate(4));
+                arr.add(c);
+            }
+            return arr.iterator();
+        } catch (SQLException ex) {
+            Logger.getLogger(ManagementCourse.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+
+    }
 }

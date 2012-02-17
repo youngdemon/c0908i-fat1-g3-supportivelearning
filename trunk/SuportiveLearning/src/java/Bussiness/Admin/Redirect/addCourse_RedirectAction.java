@@ -3,12 +3,8 @@
  * and open the template in the editor.
  */
 
-package Bussiness.Admin;
+package Bussiness.Admin.Redirect;
 
-import DAL.Admin.ManagementCourse;
-import Model.DBConnection;
-import Model.Entities.Admin.Course;
-import java.sql.Date;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionForm;
@@ -19,7 +15,7 @@ import org.apache.struts.action.ActionMapping;
  *
  * @author Administrator
  */
-public class CourseAction extends org.apache.struts.action.Action {
+public class addCourse_RedirectAction extends org.apache.struts.action.Action {
     
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
@@ -37,14 +33,7 @@ public class CourseAction extends org.apache.struts.action.Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        CourseActionForm f= (CourseActionForm) form;
-        ManagementCourse MC=new ManagementCourse();
-        Course s=new Course();
-        s.setCourseName(f.getTxtCourseName());
-        s.setDateStart(DBConnection.convertStringToDate(f.getTxtDateStart()));
-        s.setDateEnd(DBConnection.convertStringToDate(f.getTxtDateEnd()));
-        MC.addNewCourse(s);
-        request.setAttribute("action","listCourse");
+        request.setAttribute("action","addCourse");
         return mapping.findForward("home");
     }
 }
