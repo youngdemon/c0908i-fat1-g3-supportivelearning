@@ -121,6 +121,9 @@
                     <c:if test="${requestScope.action=='addBatch'}">
                         <jsp:include page="Admin/addNewBatch.jsp"/>
                     </c:if>
+                    <c:if test="${requestScope.action=='updateBatch'}">
+                        <jsp:include page="Admin/updateBatch.jsp"/>
+                    </c:if>
                     <c:if test="${requestScope.action=='addSemester'}">
                         <jsp:include page="Admin/addNewSemester.jsp"/>
                     </c:if>

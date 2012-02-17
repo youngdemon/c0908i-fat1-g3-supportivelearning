@@ -46,24 +46,24 @@ public class ManagementBatch {
         }
     }
 
-//    public boolean updateBatch(Batch b) throws SQLException
-//    {
-//        PreparedStatement ps = conn.prepareStatement("update Batcg set BatchName=?,StartDate=?,CourseId=?,SemesterId=? where BatchId=?");
-//        ps.setString(1, b.getBatchName());
-//        ps.setDate(1, (Date) b.getStartDate());
-//        ps.setString(1, b.getCourseId());
-//        ps.setString(1, b.getSemesterId());
-//        ps.setString(1, b.getBatchId());
-//
-//        if(ps.executeUpdate()>0)
-//        {
-//            return true;
-//        }
-//        else
-//        {
-//            return false;
-//        }
-//    }
+    public boolean updateBatch(Batch b) throws SQLException
+    {
+        PreparedStatement ps = conn.prepareStatement("update Batch set BatchName=?,StartDate=?,StaffId=?,SemesterId=? where BatchId=?");
+        ps.setString(1, b.getBatchName());
+        ps.setDate(2, b.getStartDate());
+        ps.setInt(3, b.getStaffId());
+        ps.setInt(4, b.getSemesterId());
+        ps.setInt(5, b.getBatchId());
+
+        if(ps.executeUpdate()>0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
 //    public boolean deleteBatch(Batch b) throws SQLException
 //    {

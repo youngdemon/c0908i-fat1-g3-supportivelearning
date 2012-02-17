@@ -11,14 +11,14 @@
 <jsp:useBean id="objManagementBatch" class="DAL.Admin.ManagementBatch"/>
 <table align="center" width="100%">
     <tr id="headerTable">
-        <th>Batcddddds Name</th>
+        <th>Batch Name</th>
         <th>Date Start</th>
         <th>Staff Id</th>
         <th>Semester Id</th>
     </tr>
     <c:forEach var="item" items="${objManagementBatch.allBatch}">
         <tr id="rowTable">
-            <td>${item.batchName}</td>
+            <td><a href="updateBatch_Redirect.do?batchId=${item.batchId}">${item.batchName}</a></td>
             <td>${item.startDate}</td>
             <td>${item.staffId}</td>
             <td>${item.semesterId}</td>
