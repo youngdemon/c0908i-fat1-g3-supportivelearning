@@ -17,24 +17,37 @@ import org.apache.struts.action.ActionMessage;
  */
 public class SubjectActionForm extends org.apache.struts.action.ActionForm {
 
-    private String txtSubjectId;
-    private String txtSubjectName;
+    private String txtsubjectId;
+    private String txtsemesterId;
+    private String txtsubjectName;
 
-    public String getTxtSubjectId() {
-        return txtSubjectId;
+    public String getTxtsemesterId() {
+        return txtsemesterId;
     }
 
-    public void setTxtSubjectId(String txtSubjectId) {
-        this.txtSubjectId = txtSubjectId;
+    public void setTxtsemesterId(String txtsemesterId) {
+        this.txtsemesterId = txtsemesterId;
     }
 
-    public String getTxtSubjectName() {
-        return txtSubjectName;
+    public String getTxtsubjectId() {
+        return txtsubjectId;
     }
 
-    public void setTxtSubjectName(String txtSubjectName) {
-        this.txtSubjectName = txtSubjectName;
+    public void setTxtsubjectId(String txtsubjectId) {
+        this.txtsubjectId = txtsubjectId;
     }
+
+    public String getTxtsubjectName() {
+        return txtsubjectName;
+    }
+
+    public void setTxtsubjectName(String txtsubjectName) {
+        this.txtsubjectName = txtsubjectName;
+    }
+
+    
+
+    
     public SubjectActionForm() {
         super();
         // TODO Auto-generated constructor stub

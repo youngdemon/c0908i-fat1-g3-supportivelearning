@@ -18,8 +18,9 @@ public class Subject {
 
     }
     private int subjectId;
-    private String subjectName;
     private int semesterId;
+    private String subjectName;
+
 
     public int getSemesterId() {
         return semesterId;

@@ -35,13 +35,13 @@ public class SubjectAction extends org.apache.struts.action.Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-//        SubjectActionForm f = (SubjectActionForm) form;
-//        ManagementSubject MS = new ManagementSubject();
-//        Subject s=new Subject();
-//        s.setSubjectId(f.getTxtSubjectId());
-//        s.setSubjectName(f.getTxtSubjectName());;
-//        System.out.println(s.getSubjectId());
-//        MS.addNewSubject(s);
-        return mapping.findForward("success");
+        SubjectActionForm f = (SubjectActionForm) form;
+        ManagementSubject MS = new ManagementSubject();
+        Subject s=new Subject();
+        s.setSemesterId(Integer.valueOf(f.getTxtsemesterId()));
+        s.setSubjectName(f.getTxtsubjectName());
+        MS.addNewSubject(s);
+        request.setAttribute("action","listSubjectAdmin");
+        return mapping.findForward("home");
     }
 }

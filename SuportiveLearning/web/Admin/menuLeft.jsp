@@ -30,7 +30,7 @@
             <li><a href="ListCourse.do">Management Course</a></li>
             <li><a href="ListSemester.do">Management Semester</a></li>
             <li><a href="ListBatch.do">Management Batch</a></li>
-            <li><a href="ManagementSubjectRedirect.do">Management Subject</a></li>
+            <li><a href="ListSubject.do">Management Subject</a></li>
             <li><a href="ListFAQ.do">Management FAQs</a></li>
             <li><a href="ListNews.do">Management News</a></li>
         </ul>
