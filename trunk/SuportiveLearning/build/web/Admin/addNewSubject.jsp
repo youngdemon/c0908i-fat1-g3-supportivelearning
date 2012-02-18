@@ -8,22 +8,31 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
 <%@taglib prefix="html" uri="http://struts.apache.org/tags-html" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<jsp:useBean id="objManegementSemester" class="DAL.Admin.ManagementSemester" />
+
 <form action="addNewSubject.do" method="post">
     <table>
         <tr>
             <td>
-                SubjectId
+                Semester ID
             </td>
             <td>
-                <html:text property="txtSubjectId" value="" />
+                <select name="txtsemesterId">
+                    <option selected="true">---Select---</option>
+                    <c:forEach var="item" items="${objManegementSemester.allSemester}">
+                        <option value="${item.semesterId}">${item.semesterId}</option>
+                    </c:forEach>
+                </select>
             </td>
         </tr>
         <tr>
             <td>
-                SubjectName
+                Subject Name
             </td>
             <td>
-                <html:text property="txtSubjectName" value="" />
+                <input type="text" name="txtsubjectName"/>
             </td>
         </tr>
         <tr>

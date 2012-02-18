@@ -3,11 +3,8 @@
  * and open the template in the editor.
  */
 
-package Bussiness.Admin;
+package Bussiness.Admin.Redirect;
 
-import DAL.Admin.ManagementBatch;
-import Model.DBConnection;
-import Model.Entities.Admin.Batch;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionForm;
@@ -16,9 +13,9 @@ import org.apache.struts.action.ActionMapping;
 
 /**
  *
- * @author Administrator
+ * @author DELL
  */
-public class BatchAction extends org.apache.struts.action.Action {
+public class updateSubject_RedirectAction extends org.apache.struts.action.Action {
     
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
@@ -36,15 +33,7 @@ public class BatchAction extends org.apache.struts.action.Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        BatchActionForm f= (BatchActionForm) form;
-        ManagementBatch MC=new ManagementBatch();
-        Batch s=new Batch();
-        s.setBatchName(f.getTxtBatchName());
-        s.setStartDate(DBConnection.convertStringToDate(f.getTxtStartDate()));
-        s.setStaffId(Integer.valueOf(f.getTxtStaffId()));
-        s.setSemesterId(Integer.valueOf(f.getTxtsemesterId()));
-        MC.addNewBatch(s);
-        request.setAttribute("action","listBatch");
+        request.setAttribute("action","updateSubject");
         return mapping.findForward("home");
     }
 }
