@@ -142,6 +142,9 @@
                     <c:if test="${requestScope.action=='addFAQ'}">
                         <jsp:include page="Admin/addNewFAQ.jsp"/>
                     </c:if>
+                    <c:if test="${requestScope.action=='updateFAQ'}">
+                        <jsp:include page="Admin/updateFAQ.jsp"/>
+                    </c:if>
                 </c:if>
                      <c:if test="${requestScope.mess=='addSuccess'}">
                         <jsp:include page="Admin/addSuccess.jsp"/>

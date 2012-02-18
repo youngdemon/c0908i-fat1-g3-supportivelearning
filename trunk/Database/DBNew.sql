@@ -159,3 +159,12 @@ create table News
 	Images nvarchar(100),
 	NewsDate datetime
 )
+go
+create table FAQ
+(
+	FAQId int identity(1,1) primary key,
+	Answer nvarchar(max),
+	Question nvarchar(max),
+	FAQDate datetime
+)
+select * from FAQ
