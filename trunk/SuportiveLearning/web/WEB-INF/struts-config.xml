@@ -7,8 +7,13 @@
 
 <struts-config>
     <form-beans>
+<<<<<<< .mine
+        <form-bean name="FAQActionForm" type="Bussiness.Admin.FAQActionForm"/>
+        <form-bean name="NewsActionForm" type="Bussiness.Admin.NewsActionForm"/>
+=======
         <form-bean name="BatchActionForm" type="Bussiness.Admin.BatchActionForm"/>
         <form-bean name="SemesterActionForm" type="Bussiness.Admin.SemesterActionForm"/>
+>>>>>>> .r62
         <form-bean name="ChangeFileActionForm" type="Bussiness.Student.Redirect.ChangeFileActionForm"/>
         <form-bean name="MarkAssignmentActionForm" type="Bussiness.Staff.MarkAssignmentActionForm"/>
         <form-bean name="AssignmentActionForm" type="Bussiness.Staff.AssignmentActionForm"/>
@@ -47,6 +52,16 @@
         <action path="/AddNewAssignmentRedirect" type="Bussiness.Staff.Redirect.AddNewAssignment_RedirectAction">
             <forward name="successAdding" path="/ListAssigment_Redirect.do"/>
         </action>
+<<<<<<< .mine
+        <action path="/addFAQ_Redirect" type="Bussiness.Admin.Redirect.addFAQ_RedirectAction"/>
+        <action input="/" name="FAQActionForm" path="/ListFAQ" scope="session" type="Bussiness.Admin.Redirect.ListFAQAction" validate="false"/>
+        <action input="/Admin/addNewFAQ.jsp" name="FAQActionForm" path="/addFAQ" scope="session" type="Bussiness.Admin.Redirect.addFAQ_RedirectAction" validate="false"/>
+        <action input="/Admin/listFAQ.jsp" name="FAQActionForm" path="/listFAQ" scope="session" type="Bussiness.Admin.Redirect.ListFAQAction" validate="false"/>
+        <action input="/Admin/addNewFAQ.jsp" name="FAQActionForm" path="/addNewFAQ" scope="session" type="Bussiness.Admin.FAQAction" validate="false"/>
+        <action input="/Admin/addNewNews.jsp" name="NewsActionForm" path="/addNewNews" scope="session" type="Bussiness.Admin.NewsAction" validate="false"/>
+        <action input="/Admin/addNewNews.jsp" name="ChangeFileActionForm" path="/addNews_Redirect" scope="session" type="Bussiness.Admin.Redirect.addNews_RedirectAction"/>
+        <action path="/ListNews" type="Bussiness.Admin.Redirect.ListNewsAction"/>
+=======
         <action input="/Admin/updateBatch.jsp" name="BatchActionForm" path="/updateBatch" scope="session" type="Bussiness.Admin.updateBatchAction" validate="false"/>
         <action path="/updateBatch_Redirect" type="Bussiness.Admin.Redirect.updateBatch_RedirectAction"/>
         <action path="/addBatch_Redirect" type="Bussiness.Admin.Redirect.addBatch_RedirectAction"/>
@@ -55,6 +70,7 @@
         <action path="/addSemester_Redirect" type="Bussiness.Admin.Redirect.addSemester_RedirectAction"/>
         <action path="/ListSemester" type="Bussiness.Admin.Redirect.ListSemesterAction"/>
         <action input="/Admin/addNewSemester.jsp" name="SemesterActionForm" path="/addNewSemester" scope="session" type="Bussiness.Admin.SemesterAction" validate="false"/>
+>>>>>>> .r62
         <action path="/addCourse_Redirect" type="Bussiness.Admin.Redirect.addCourse_RedirectAction"/>
         <action path="/ListCourse" type="Bussiness.Admin.Redirect.ListCourseAction"/>
         <action input="/Staff/updateMark.jsp" name="MarkAssignmentActionForm" path="/updateMark" scope="session" type="Bussiness.Staff.updateMarkAssignmentAction" validate="false"/>

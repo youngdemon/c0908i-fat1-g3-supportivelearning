@@ -1,4 +1,4 @@
-<%-- 
+[<%-- 
     Document   : Home
     Created on : Feb 5, 2012, 2:58:36 PM
     Author     : Administrator
@@ -130,6 +130,18 @@
                     <c:if test="${requestScope.action=='addCourse'}">
                         <jsp:include page="Admin/addNewCourse.jsp"/>
                     </c:if>
+                    <c:if test="${requestScope.action=='listNews'}">
+                        <jsp:include page="Admin/listNews.jsp"/>
+                    </c:if>
+                    <c:if test="${requestScope.action=='addNews'}">
+                        <jsp:include page="Admin/addNewNews.jsp"/>
+                    </c:if>
+                     <c:if test="${requestScope.action=='listFAQ'}">
+                        <jsp:include page="Admin/listFAQ.jsp"/>
+                    </c:if>
+                    <c:if test="${requestScope.action=='addFAQ'}">
+                        <jsp:include page="Admin/addNewFAQ.jsp"/>
+                    </c:if>
                 </c:if>
                      <c:if test="${requestScope.mess=='addSuccess'}">
                         <jsp:include page="Admin/addSuccess.jsp"/>
@@ -137,7 +149,7 @@
             </div>
             <div id="LayerRight">
                 <jsp:include page="Admin/login.jsp" />
-                <jsp:include page="Admin/listNews.jsp"/>
+                
             </div>
             <div id="LayerFooter">
                 <center>
