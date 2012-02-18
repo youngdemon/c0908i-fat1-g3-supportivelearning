@@ -7,13 +7,22 @@
 
 <struts-config>
     <form-beans>
+<<<<<<< .mine
+=======
 
+>>>>>>> .r64
         <form-bean name="FAQActionForm" type="Bussiness.Admin.FAQActionForm"/>
         <form-bean name="NewsActionForm" type="Bussiness.Admin.NewsActionForm"/>
+<<<<<<< .mine
+=======
 
+>>>>>>> .r64
         <form-bean name="BatchActionForm" type="Bussiness.Admin.BatchActionForm"/>
         <form-bean name="SemesterActionForm" type="Bussiness.Admin.SemesterActionForm"/>
+<<<<<<< .mine
+=======
 
+>>>>>>> .r64
         <form-bean name="ChangeFileActionForm" type="Bussiness.Student.Redirect.ChangeFileActionForm"/>
         <form-bean name="MarkAssignmentActionForm" type="Bussiness.Staff.MarkAssignmentActionForm"/>
         <form-bean name="AssignmentActionForm" type="Bussiness.Staff.AssignmentActionForm"/>
@@ -52,17 +61,31 @@
         <action path="/AddNewAssignmentRedirect" type="Bussiness.Staff.Redirect.AddNewAssignment_RedirectAction">
             <forward name="successAdding" path="/ListAssigment_Redirect.do"/>
         </action>
+<<<<<<< .mine
+        <action path="/deleteNews" type="Bussiness.Admin.deleteNewsAction"/>
+        <action input="/Admin/updateNews.jsp" name="NewsActionForm" path="/updateNews" scope="session" type="Bussiness.Admin.updateNewsAction" validate="false"/>
+        <action path="/updateNews_Redirect" type="Bussiness.Admin.Redirect.updateNews_RedirectAction"/>
+        <action input="/" name="NewsActionForm" path="/updateNews_Redirect" scope="session" type="Bussiness.Admin.Redirect.updateNews_RedirectAction" validate="false"/>
+        <action input="/Admin/updateNews.jsp" name="NewsActionForm" path="/updateNews" scope="session" type="Bussiness.Admin.updateNewsAciton" validate="false"/>
+        <action input="/" name="NewsActionForm" path="/updateNews_Redirect" scope="session" type="Bussiness.Admin.Redirect.updateNews_RedirectAction" validate="false"/>
+        <action input="/Admin/updateNews.jsp" name="NewsActionForm" path="/updateNews" scope="session" type="Bussiness.Admin.updateNewsAction" validate="false"/>
+        <action input="/Admin/updateNews.jsp" name="FAQActionForm" path="/updateNews_Redirect" scope="session" type="Bussiness.Admin.Redirect.updateNews_RedirectAction" validate="false"/>
+=======
         <action path="/deleteFAQs" type="Bussiness.Admin.deleteFAQsAction"/>
         <action input="/Admin/updateFAQ.jsp" name="FAQActionForm" path="/updateFAQs" scope="session" type="Bussiness.Admin.updateFAQsAction" validate="false"/>
         <action path="/updateFAQ_Redirect" type="Bussiness.Admin.Redirect.updateFAQ_RedirectAction" validate="false"/>
 
+>>>>>>> .r64
         <action path="/addFAQ_Redirect" type="Bussiness.Admin.Redirect.addFAQ_RedirectAction"/>
         <action path="/ListFAQ" type="Bussiness.Admin.Redirect.ListFAQAction" />
         <action input="/Admin/addNewFAQ.jsp" name="FAQActionForm" path="/addNewFAQ" scope="session" type="Bussiness.Admin.FAQAction" validate="false"/>
         <action input="/Admin/addNewNews.jsp" name="NewsActionForm" path="/addNewNews" scope="session" type="Bussiness.Admin.NewsAction" validate="false"/>
         <action path="/addNews_Redirect" scope="session" type="Bussiness.Admin.Redirect.addNews_RedirectAction"/>
         <action path="/ListNews" type="Bussiness.Admin.Redirect.ListNewsAction"/>
+<<<<<<< .mine
+=======
 
+>>>>>>> .r64
         <action input="/Admin/updateBatch.jsp" name="BatchActionForm" path="/updateBatch" scope="session" type="Bussiness.Admin.updateBatchAction" validate="false"/>
         <action path="/updateBatch_Redirect" type="Bussiness.Admin.Redirect.updateBatch_RedirectAction"/>
         <action path="/addBatch_Redirect" type="Bussiness.Admin.Redirect.addBatch_RedirectAction"/>
@@ -71,7 +94,10 @@
         <action path="/addSemester_Redirect" type="Bussiness.Admin.Redirect.addSemester_RedirectAction"/>
         <action path="/ListSemester" type="Bussiness.Admin.Redirect.ListSemesterAction"/>
         <action input="/Admin/addNewSemester.jsp" name="SemesterActionForm" path="/addNewSemester" scope="session" type="Bussiness.Admin.SemesterAction" validate="false"/>
+<<<<<<< .mine
+=======
 
+>>>>>>> .r64
         <action path="/addCourse_Redirect" type="Bussiness.Admin.Redirect.addCourse_RedirectAction"/>
         <action path="/ListCourse" type="Bussiness.Admin.Redirect.ListCourseAction"/>
         <action input="/Staff/updateMark.jsp" name="MarkAssignmentActionForm" path="/updateMark" scope="session" type="Bussiness.Staff.updateMarkAssignmentAction" validate="false"/>

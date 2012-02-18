@@ -269,8 +269,13 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
         if (_jspx_meth_c_if_25((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_if_0, _jspx_page_context))
           return true;
         out.write("\n");
+<<<<<<< .mine
+        out.write("                     ");
+        if (_jspx_meth_c_if_26((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_if_0, _jspx_page_context))
+=======
         out.write("                    ");
         if (_jspx_meth_c_if_26((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_if_0, _jspx_page_context))
+>>>>>>> .r64
           return true;
         out.write("\n");
         out.write("                    ");
@@ -1066,16 +1071,29 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
     HttpServletRequest request = (HttpServletRequest)_jspx_page_context.getRequest();
     HttpServletResponse response = (HttpServletResponse)_jspx_page_context.getResponse();
     //  c:if
+<<<<<<< .mine
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_25 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_25.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_25.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_if_0);
+    _jspx_th_c_if_25.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${requestScope.action=='updateNews'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_25 = _jspx_th_c_if_25.doStartTag();
+    if (_jspx_eval_c_if_25 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+=======
     org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_25 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
     _jspx_th_c_if_25.setPageContext(_jspx_page_context);
     _jspx_th_c_if_25.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_if_0);
     _jspx_th_c_if_25.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${requestScope.action=='listFAQ'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
     int _jspx_eval_c_if_25 = _jspx_th_c_if_25.doStartTag();
     if (_jspx_eval_c_if_25 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+>>>>>>> .r64
       do {
         out.write("\n");
         out.write("                        ");
+<<<<<<< .mine
+        org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "Admin/updateNews.jsp", out, false);
+=======
         org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "Admin/listFAQ.jsp", out, false);
+>>>>>>> .r64
         out.write("\n");
         out.write("                    ");
         int evalDoAfterBody = _jspx_th_c_if_25.doAfterBody();
@@ -1098,16 +1116,29 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
     HttpServletRequest request = (HttpServletRequest)_jspx_page_context.getRequest();
     HttpServletResponse response = (HttpServletResponse)_jspx_page_context.getResponse();
     //  c:if
+<<<<<<< .mine
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_26 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_26.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_26.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_if_0);
+    _jspx_th_c_if_26.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${requestScope.action=='listFAQ'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_26 = _jspx_th_c_if_26.doStartTag();
+    if (_jspx_eval_c_if_26 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+=======
     org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_26 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
     _jspx_th_c_if_26.setPageContext(_jspx_page_context);
     _jspx_th_c_if_26.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_if_0);
     _jspx_th_c_if_26.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${requestScope.action=='addFAQ'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
     int _jspx_eval_c_if_26 = _jspx_th_c_if_26.doStartTag();
     if (_jspx_eval_c_if_26 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+>>>>>>> .r64
       do {
         out.write("\n");
         out.write("                        ");
+<<<<<<< .mine
+        org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "Admin/listFAQ.jsp", out, false);
+=======
         org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "Admin/addNewFAQ.jsp", out, false);
+>>>>>>> .r64
         out.write("\n");
         out.write("                    ");
         int evalDoAfterBody = _jspx_th_c_if_26.doAfterBody();
@@ -1130,16 +1161,29 @@ public final class Home_jsp extends org.apache.jasper.runtime.HttpJspBase
     HttpServletRequest request = (HttpServletRequest)_jspx_page_context.getRequest();
     HttpServletResponse response = (HttpServletResponse)_jspx_page_context.getResponse();
     //  c:if
+<<<<<<< .mine
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_27 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_27.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_27.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_if_0);
+    _jspx_th_c_if_27.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${requestScope.action=='addFAQ'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_27 = _jspx_th_c_if_27.doStartTag();
+    if (_jspx_eval_c_if_27 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+=======
     org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_27 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
     _jspx_th_c_if_27.setPageContext(_jspx_page_context);
     _jspx_th_c_if_27.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_if_0);
     _jspx_th_c_if_27.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${requestScope.action=='updateFAQ'}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
     int _jspx_eval_c_if_27 = _jspx_th_c_if_27.doStartTag();
     if (_jspx_eval_c_if_27 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+>>>>>>> .r64
       do {
         out.write("\n");
         out.write("                        ");
+<<<<<<< .mine
+        org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "Admin/addNewFAQ.jsp", out, false);
+=======
         org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "Admin/updateFAQ.jsp", out, false);
+>>>>>>> .r64
         out.write("\n");
         out.write("                    ");
         int evalDoAfterBody = _jspx_th_c_if_27.doAfterBody();

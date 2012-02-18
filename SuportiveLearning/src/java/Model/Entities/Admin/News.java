@@ -55,6 +55,7 @@ public class News {
         this.newsId = newsId;
     }
 
+   
     public String getTitle() {
         return title;
     }

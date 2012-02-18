@@ -10,6 +10,7 @@
 <jsp:useBean id="objManagementNews" class="DAL.Admin.ManagementNews"/>
 <table align="center" width="100%">
     <tr id="headerTable">
+        <th>ID</th>>
         <th>Title</th>
         <th>News</th>
         <th>Images</th>
@@ -17,10 +18,12 @@
     </tr>
     <c:forEach var="item" items="${objManagementNews.allNews}">
         <tr id="rowTable">
+        <td><a href="updateNews_Redirect.do?newsId=${item.newsId}">${item.newsId}</a></td>
         <td>${item.title}</td>
         <td>${item.news}</td>
         <td>${item.images}</td>
         <td>${item.newsDate}</td>
+        <td><a href="deleteNews.do?newsId=${item.newsId}">Delete</a></td>
     </tr>
     </c:forEach>
     <tr>
