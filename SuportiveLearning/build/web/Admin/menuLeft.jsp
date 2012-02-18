@@ -31,8 +31,8 @@
             <li><a href="ListSemester.do">Management Semester</a></li>
             <li><a href="ListBatch.do">Management Batch</a></li>
             <li><a href="ManagementSubjectRedirect.do">Management Subject</a></li>
-            <li><a href="ManagementFAQSRedirect.do">Management FAQs</a></li>
-            <li><a href="ManagementNewsRedirect.do">Management News</a></li>
+            <li><a href="ListFAQ.do">Management FAQs</a></li>
+            <li><a href="ListNews.do">Management News</a></li>
         </ul>
     </c:if>
     <c:if test="${role=='R2'}">
