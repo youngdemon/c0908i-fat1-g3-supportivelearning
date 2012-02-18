@@ -46,38 +46,38 @@ public class ManagementNews {
         }
 
     }
-//    public boolean updateNews(News n) throws SQLException
-//    {
-//        PreparedStatement ps = conn.prepareStatement("update News set Title=?, News=?, Images=?, NewsDate=? where NewsId=?");
-//        ps.setString(1, n.getTitle());
-//        ps.setString(1, n.getNews());
-//        ps.setString(1, n.getImages());
-//        ps.setDate(1, (Date) n.getNewsDate());
-//        ps.setString(1, n.getNewsId());
-//        if(ps.executeUpdate()>0)
-//        {
-//            return true;
-//        }
-//        else
-//        {
-//            return true;
-//        }
-//    }
-//    public boolean deleteNews(News n) throws SQLException
-//    {
-//
-//        PreparedStatement ps = conn.prepareStatement("delete from News where NewsId = ?");
-//        ps.setString(1, n.getNewsId());
-//        if(ps.executeUpdate()>0)
-//        {
-//            return true;
-//        }
-//        else
-//        {
-//            return false;
-//        }
-//    }
-//
+    public boolean updateNews(News n) throws SQLException
+    {
+        PreparedStatement ps = conn.prepareStatement("update News set Title=?, News=?, Images=?, NewsDate=? where NewsId=?");
+        ps.setString(1, n.getTitle());
+        ps.setString(2, n.getNews());
+        ps.setString(3, n.getImages());
+        ps.setDate(4, n.getNewsDate());
+        ps.setInt(5, n.getNewsId());
+        if(ps.executeUpdate()>0)
+        {
+            return true;
+        }
+        else
+        {
+            return true;
+        }
+    }
+    public boolean deleteNews(int id) throws SQLException
+    {
+
+        PreparedStatement ps = conn.prepareStatement("delete from News where NewsId = ?");
+        ps.setInt(1, id);
+        if(ps.executeUpdate()>0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public Iterator getAllNews()
     {
         try {
@@ -101,5 +101,40 @@ public class ManagementNews {
         return null;
 
     }
+
+    private int newsId;
+
+    public int getNewsId() {
+        return newsId;
+    }
+
+    public void setNewsId(int newsId) {
+        this.newsId = newsId;
+    }
+
+    public Iterator getAllNewsById()
+    {
+        try {
+            PreparedStatement ps = conn.prepareStatement("select * from News where NewsId=?");
+            ps.setInt(1,newsId);
+            ResultSet rs=ps.executeQuery();
+            ArrayList arr=new ArrayList();
+            while(rs.next())
+            {
+                News temp=new News();
+                temp.setNewsId(rs.getInt(1));
+                temp.setTitle(rs.getString(2));
+                temp.setNews(rs.getString(3));
+                temp.setImages(rs.getString(4));
+                temp.setNewsDate(rs.getDate(5));
+                arr.add(temp);
+            }
+            return arr.iterator();
+        } catch (SQLException ex) {
+            Logger.getLogger(ManagementBatch.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+
 
 }
