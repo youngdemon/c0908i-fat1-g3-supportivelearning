@@ -52,6 +52,4 @@ public class FAQ {
     public void setQuestion(String question) {
         this.question = question;
     }
-
-
 }

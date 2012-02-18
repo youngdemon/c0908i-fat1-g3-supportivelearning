@@ -14,13 +14,15 @@
         <th>Answer</th>
         <th>Question</th>
         <th>FAQDate</th>
+        <th></th>
     </tr>
     <c:forEach var="item" items="${objManagementFAQ.allFAQ}">
-        <tr id="rowTable">
-        <td>${item.fAQId}</td>
+        <tr id="rowTable" align="center">
+        <td><a href="updateFAQ_Redirect.do?fAQId=${item.fAQId}">${item.fAQId}</a></td>
         <td>${item.answer}</td>
         <td>${item.question}</td>
         <td>${item.fAQDate}</td>
+        <td><a href="deleteFAQs.do?fQAId=${item.fAQId}">Delete</a></td>
     </tr>
     </c:forEach>
     <tr>
