@@ -6,19 +6,20 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-   "http://www.w3.org/TR/html4/loose.dtd">
+<jsp:useBean id="objManagementSemester" class="DAL.Admin.ManagementSemester"/>
 <jsp:useBean id="objManegementCourse" class="DAL.Admin.ManagementCourse" />
+<jsp:setProperty name="objManagementSemester" property="semesterId" value="${param.semesterId}"/>
 <form action="updateSemester.do" method="post">
+    <c:forEach var="item" items="${objManagementSemester.semesterById}">
     <table>
          <tr>
+             <tr>
             <td>
                 Course Name
             </td>
             <td>
                 <select name="txtcourseId">
-                    <option selected="true">---Select---</option>
-                    <c:forEach var="item" items="${objManegementCourse.allCourse}">
+                    <c:forEach var="item2" items="${objManegementCourse.allCourse}">
                         <c:if test="${item.courseId==item2.courseId  }">
                             <option value="${item2.courseId}" selected="true">${item2.courseName}</option>
                         </c:if>
@@ -34,7 +35,8 @@
                 Semester Name
             </td>
             <td>
-                <input type="text" name="txtsemesterName" value="${item.semesterName}"/>
+                <input type="text" name="txtsemesterName"  value="${item.semesterName}"/>
+                <input type="hidden" name="txtsemesterId" value="${item.semesterId}"/>
             </td>
         </tr>
         <tr>
@@ -43,4 +45,5 @@
             </td>
         </tr>
     </table>
+    </c:forEach>
 </form>

@@ -9,12 +9,20 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
 <jsp:useBean id="objManagementBatch" class="DAL.Admin.ManagementBatch"/>
+<c:if test="${not empty requestScope.mess}">
+    <c:if test="${requestScope.mess=='deleteFail'}">
+        <div>
+            * Delete fails please check relationship
+        </div>
+    </c:if>
+</c:if>
 <table align="center" width="100%">
     <tr id="headerTable">
         <th>Batch Name</th>
         <th>Date Start</th>
         <th>Staff Id</th>
         <th>Semester Id</th>
+        <th></th>
     </tr>
     <c:forEach var="item" items="${objManagementBatch.allBatch}">
         <tr id="rowTable">
@@ -22,8 +30,10 @@
             <td>${item.startDate}</td>
             <td>${item.staffId}</td>
             <td>${item.semesterId}</td>
+            <td><a href="deleteBatch.do?batchId=${item.batchId}">Delete</a></td>
         </tr>
     </c:forEach>
+
     <tr>
         <td colspan="4">
             <a href="addBatch_Redirect.do">Add New Batch</a>

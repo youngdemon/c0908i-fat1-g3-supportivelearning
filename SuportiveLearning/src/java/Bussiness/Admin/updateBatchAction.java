@@ -45,7 +45,11 @@ public class updateBatchAction extends org.apache.struts.action.Action {
         b.setStaffId(Integer.valueOf(f.getTxtStaffId()));
         b.setSemesterId(Integer.valueOf(f.getTxtsemesterId()));
         MC.updateBatch(b);
+<<<<<<< .mine
+        request.setAttribute("action","updateBatchAction");
+=======
         request.setAttribute("action","listSubjectAction");
+>>>>>>> .r67
         return mapping.findForward("home");
     }
 }

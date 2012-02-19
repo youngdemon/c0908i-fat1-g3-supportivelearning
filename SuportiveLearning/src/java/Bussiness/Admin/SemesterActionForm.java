@@ -17,26 +17,25 @@ import org.apache.struts.action.ActionMessage;
  */
 public class SemesterActionForm extends org.apache.struts.action.ActionForm {
 
-    private String txtsemesterId;
-    private String txtcourseId;
+    private int txtsemesterId;
+    private int txtcourseId;
     private String txtsemesterName;
 
-    public String getTxtcourseId() {
+    public int getTxtcourseId() {
         return txtcourseId;
     }
 
-    public void setTxtcourseId(String txtcourseId) {
+    public void setTxtcourseId(int txtcourseId) {
         this.txtcourseId = txtcourseId;
     }
 
-    public String getTxtsemesterId() {
+    public int getTxtsemesterId() {
         return txtsemesterId;
     }
 
-    public void setTxtsemesterId(String txtsemesterId) {
+    public void setTxtsemesterId(int txtsemesterId) {
         this.txtsemesterId = txtsemesterId;
     }
-
 
     public String getTxtsemesterName() {
         return txtsemesterName;

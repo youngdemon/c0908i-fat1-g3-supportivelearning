@@ -40,35 +40,74 @@ public class ManagementSemester {
         return false;
         }
     }
-//    public boolean updateCourse(Course c) throws SQLException
-//    {
-//        PreparedStatement ps = conn.prepareStatement("update Course set CourseName = ?, DateStart = ?, DateEnd = ? where CourseId = ?");
-//        ps.setString(1, c.getCourseName());
-//        ps.setDate(2, (Date) c.getDateStart());
-//        ps.setDate(3, (Date) c.getDateEnd());
-//        ps.setString(4, c.getCourseId());
-//        if(ps.executeUpdate()>0)
-//        {
-//            return true;
-//        }
-//        else
-//        {
-//            return false;
-//        }
-//    }
-//    public boolean deleteCourse(Course c) throws SQLException
-//    {
-//        PreparedStatement ps = conn.prepareStatement("delete from Course where CourseId = ?");
-//        ps.setString(1, c.getCourseId());
-//        if(ps.executeUpdate()>0)
-//        {
-//            return true;
-//        }
-//        else
-//        {
-//            return false;
-//        }
-//    }
+    public boolean updateSemester(Semester s) throws SQLException
+    {
+        PreparedStatement ps = conn.prepareStatement("update Semester set CourseId = ?, SemesterName = ? where SemesterId = ?");
+        ps.setInt(1, s.getCourseId());
+        ps.setString(2, s.getSemesterName());
+        ps.setInt(3, s.getSemesterId());
+        if(ps.executeUpdate()>0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public boolean deleteSemester(int s) throws SQLException
+    {
+        try
+        {
+            PreparedStatement ps = conn.prepareStatement("delete from Semester where SemesterId = ?");
+            ps.setInt(1, s);
+            if(ps.executeUpdate()>0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }catch(Exception e)
+        {
+            return false;
+        }
+    }
+
+    private int semesterId;
+
+    public int getSemesterId() {
+        return semesterId;
+    }
+
+    public void setSemesterId(int semesterId) {
+        this.semesterId = semesterId;
+    }
+    
+    public Iterator getSemesterById()
+    {
+        try {
+            PreparedStatement ps = conn.prepareStatement("select * from Semester where SemesterId=?");
+            ps.setInt(1,semesterId);
+            ResultSet rs=ps.executeQuery();
+            ArrayList arr=new ArrayList();
+            while(rs.next())
+            {
+                Semester temp=new Semester();
+                temp.setSemesterId(rs.getInt(1));
+                temp.setCourseId(rs.getInt(2));
+                temp.setSemesterName(rs.getString(3));
+                
+                arr.add(temp);
+            }
+            return arr.iterator();
+        } catch (SQLException ex) {
+            Logger.getLogger(ManagementBatch.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
 
     //display table course
     public Iterator getAllSemester()

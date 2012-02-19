@@ -65,20 +65,27 @@ public class ManagementBatch {
         }
     }
 
-//    public boolean deleteBatch(Batch b) throws SQLException
-//    {
-//        PreparedStatement ps = conn.prepareStatement("delete from Batch where BatchId=?");
-//        ps.setString(1, b.getBatchId());
-//
-//        if(ps.executeUpdate()>0)
-//        {
-//            return true;
-//        }
-//        else
-//        {
-//            return false;
-//        }
-//    }
+    public boolean deleteBatch(int b) throws SQLException
+    {
+        try
+        {
+            PreparedStatement ps = conn.prepareStatement("delete from Batch where BatchId=?");
+            ps.setInt(1, b);
+
+            if(ps.executeUpdate()>0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }catch(Exception e)
+        {
+            return false;
+        }
+    }
+
     private int StaffId;
 
     public int getStaffId() {
